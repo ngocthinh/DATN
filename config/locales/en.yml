@@ -1,5 +1,7 @@
 en:
+  search: "Search"
   succeed: "Succeed"
+  remove: "Remove"
   project_not_found: "Project not found"
   user_not_found: "User not found"
   available: "User is available in your project"

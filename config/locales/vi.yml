@@ -1,5 +1,7 @@
 vi:
+  search: "Tìm kiếm"
   succeed: "Thành công"
+  remove: "Xóa"
   dictionary:
   too_long: &too_long " quá dài"
   blank: &blank " không được trống"
