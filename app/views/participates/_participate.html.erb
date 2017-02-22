@@ -14,7 +14,7 @@
     <div class="meta">
       <%= participate.user.position %>
     </div>
-    <% if !participate.user.biography.nil? %>
+    <% if participate.user.biography.presence %>
       <div class="description">
         <%= participate.user.biography.truncate(Settings.truncate.biography) %>
       </div>
@@ -26,7 +26,7 @@
     </span>
     <span>
       <i class="user icon"></i>
-      <%= participate.user.projects.count %> <%= t ".projects" %>
+      <%= participate.user.projects.size %> <%= t ".projects" %>
     </span>
   </div>
 </div>
@@ -81,8 +81,8 @@
           <h5 class="text-left">
             <strong>
               <span class="glyphicon glyphicon-user" >
-                  <%= t "users.biography" %>
-                  <h5><%= participate.user.biography %></h5><br>
+                <%= t "users.biography" %>
+                <h5><%= participate.user.biography %></h5><br>
               </span>
             </strong>
           </h5>

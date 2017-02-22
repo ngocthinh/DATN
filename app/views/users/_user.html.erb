@@ -12,7 +12,7 @@
       <%= user.position %>
     </div>
 
-    <% if !user.biography.nil? %>
+    <% if user.biography.presence %>
       <div class="description">
         <%= user.biography.truncate(Settings.truncate.biography) %>
       </div>
@@ -24,7 +24,7 @@
     </span>
     <span>
       <i class="user icon"></i>
-      <%= user.projects.count %> <%= t ".projects" %>
+      <%= user.projects.size %> <%= t ".projects" %>
     </span>
   </div>
 </div>

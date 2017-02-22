@@ -119,6 +119,8 @@ img.raty-cancel {
 
 .st-navbar ul {
   margin-top: 15px;
+  list-style: none;
+  margin-left: -45px;
 }
 
 .st-navbar ul li a {

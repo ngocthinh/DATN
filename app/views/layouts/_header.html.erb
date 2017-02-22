@@ -89,12 +89,16 @@
                     </li>
                     <li class="divider"></li>
                     <li>
+                      <% if current_user.has_role? :admin %>
+                        <li><%= link_to "Admin Page", admin_root_path(locale: I18n.locale) %></li>
+                        <span class="glyphicon glyphicon-list-alt pull-right"></span>
+                      <% end %>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
                       <%= link_to destroy_user_session_path(locale: I18n.locale), method: :delete do %>
                         <%= t "log_out" %>
                         <span class="glyphicon glyphicon-log-out pull-right"></span>
-                      <% end %>
-                      <% if current_user.has_role? :admin %>
-                        <li><%= link_to t("header.menu.create_account"), new_user_path(locale: I18n.locale) %></li>
                       <% end %>
                     </li>
                   </ul>
