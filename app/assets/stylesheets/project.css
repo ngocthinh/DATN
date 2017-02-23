@@ -2,7 +2,18 @@
   margin-left: 8px;
   width: 75%;
 }
-
+.margin-top-20 {
+  margin-top: 20px;
+}
+.margin-top-15 {
+  margin-top: 15px !important;
+}
+.margin-top-null{
+  margin-top: 0 !important;
+}
+.form-project-new {
+  margin-top: 100px;
+}
 .margin-top-20 {
   margin-top: 20px;
 }
@@ -206,10 +217,6 @@ div.slideouticons.horizontal input:checked~ div.iconswrapper ul li {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-}
-
-.form-project-new {
-  margin-top: 79px;
 }
 
 #project-description {

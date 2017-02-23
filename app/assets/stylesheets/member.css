@@ -52,7 +52,7 @@
 
 .scroll {
   overflow-y: scroll;
-  max-height: 400px;
+
 }
 
 .img-member {
@@ -65,4 +65,12 @@
   margin: 0 auto;
   width: 845px;
   height: 476px !important;
+}
+
+#admin-nav {
+  position: fixed;
+}
+
+#admin-site {
+  margin-left: 15.5%;
 }

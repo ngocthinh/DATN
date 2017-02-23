@@ -2,12 +2,10 @@ Rails.application.routes.draw do
   post "/rate" => "rater#create", as: "rate"
   devise_for :users, controllers: {omniauth_callbacks: "callbacks",
     registrations: "users"}
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   scope "(:locale)", locale: /en|vi|ja/ do
     root "static_pages#home"
-    resources :projects do
-      resources :participates
-    end
+
     resources :users
     resources :blogs
     resources :news
@@ -16,8 +14,16 @@ Rails.application.routes.draw do
     resources :contacts
     resources :categories
     resources :like_blogs
+    resources :projects do
+      resources :participates
+    end
     namespace :admin do
-      root "static_pages#index", as: "root"
+      root "admin#index"
+      resources :homes
+      resources :users
+      resources :projects do
+        resources :participates
+      end
     end
     resources :messages
   end

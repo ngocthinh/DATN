@@ -10,24 +10,24 @@
     </div>
     <hr />
     <%= search_form_for @q, id: "search_form" do |f| %>
-      <div class="col-md-12">
+      <div class="col-md-12", id = "search-project" >
         <div class="col-md-2">
-          <%= f.text_field :name_cont, placeholder: (t".search_project"), 
+          <%= f.text_field :name_cont, placeholder: (t".search_project"),
             id: "user_search", class: "form-control" %>
         </div>
         <div class="col-md-2">
-          <%= f.select :branch_eq, 
-            options_for_select(Project::BRANCH), {include_blank: (t".all")}, 
+          <%= f.select :branch_eq,
+            options_for_select(Project::BRANCH), {include_blank: (t".all")},
             {class: "form-control selectpicker", "data-live-search": true} %>
         </div>
         <div class="col-md-2">
-          <%= f.select :category_id_eq, 
-            options_for_select(@categories.all.map{|c| [c.name, c.id]}, 
+          <%= f.select :category_id_eq,
+            options_for_select(@categories.all.map{|c| [c.name, c.id]},
             f.object.category_id),{include_blank: (t".all")} ,
             {class: "form-control selectpicker", "data-live-search": true} %>
         </div>
         <div class="col-md-1">
-          <%= f.submit ("search"), class: "ui blue button" %>
+          <%= f.submit t("search_button"), class: "ui blue button" %>
         </div>
         <div class="col-md-5">
         </div>

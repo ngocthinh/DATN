@@ -1,4 +1,5 @@
-class Admin::StaticPagesController < AdminController
+class Admin::StaticPagesController < Admin::AdminController
+  before_action :authenticate_user!
     def index
     end
 end

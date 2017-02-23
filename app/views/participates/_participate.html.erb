@@ -1,4 +1,4 @@
-<div class="card custom-card" id= "user<%= participate.user.id %>">
+<div class="card custom-card margin-top-20" id= "user<%= participate.user.id %>">
   <%= link_to (t "remove"), project_participate_path(I18n.locale, @project, participate),
     remote: true, method: :delete, class: "btn btn-primary" %>
 

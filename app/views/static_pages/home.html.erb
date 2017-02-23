@@ -2,46 +2,32 @@
   <div id="home-carousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="item active">
-        <%= image_tag "slider/1.jpg", class: "resize-slide" %>
-        <div class="carousel-caption container">
-        </div>
-      </div>
-      <div class="item">
-        <%= image_tag "slider/1.jpg", class: "resize-slide" %>
+        <%= image_tag @home.images.first.image.url, class: "resize-slide" %>
         <div class="carousel-caption container">
           <div class="row">
             <div class="col-sm-7">
-              <h1><%= t "sologan.first" %></h1>
-              <h2><%= t "sologan.second" %></h2>
-              <p><%= t "footer.description" %></p>
+              <h2 id = "home-title"><%= @home.title %></h2>
+              <h3 id = "home-sologan"><%= @home.sologan %></h3>
+              <p id = "home-description"><%= @home.description %></p>
             </div>
           </div>
         </div>
       </div>
-      <div class="item">
-        <%= image_tag "slider/3.jpg", class: "resize-slide" %>
-        <div class="carousel-caption container">
-          <div class="row">
-            <div class="col-sm-7">
-              <h1><%= t "sologan.first" %></h1>
-              <h2><%= t "sologan.second" %></h2>
-              <p><%= t "footer.description" %></p>
+      <% @home.images[Settings.array_image.second..Settings.array_image.last]
+        .each do |image, i| %>
+        <div class="item">
+          <%= image_tag image.image.url, class: "resize-slide" %>
+          <div class="carousel-caption container">
+            <div class="row">
+              <div class="col-sm-7">
+                <h2 id = "home-title"><%= @home.title %></h2>
+                <h3 id= "home-sologan"><%= @home.sologan %></h3>
+                <p id = "home-description"><%= @home.description %></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="item">
-        <%= image_tag "slider/4.jpg", class: "resize-slide" %>
-        <div class="carousel-caption container">
-          <div class="row">
-            <div class="col-sm-7">
-              <h1><%= t "sologan.first" %></h1>
-              <h2><%= t "sologan.second" %></h2>
-              <p><%= t "footer.description" %></p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <% end %>
       <a class="home-carousel-left" href="#home-carousel" data-slide="prev">
         <i class="fa fa-angle-left"></i>
       </a>
@@ -215,7 +201,7 @@
       <div class="col-sm-6 col-md-3">
         <div class="fun-fact text-center">
           <h3><i class="fa fa-coffee"></i> <span class="st-counter"><%= Post.blog.count %></span></h3>
-          <p><%= t "blogs" %></p>
+          <p><%= t "blogs.name" %></p>
         </div>
       </div>
     </div>

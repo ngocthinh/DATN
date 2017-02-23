@@ -1,5 +1,5 @@
 en:
-  search: "Search"
+  search_button: "Search"
   succeed: "Succeed"
   remove: "Remove"
   project_not_found: "Project not found"
@@ -51,6 +51,8 @@ en:
   comment_content: "Comment something"
   notification: "Notifications"
   like_button: "Like"
+  edit_home: "Edit Design Home"
+  save: "Save"
   contacts:
     create:
       success: "Thank you for contact with us, plese wait Customer Service team will be responding to you soon."
@@ -295,6 +297,7 @@ en:
   admin:
     home: "Admin home"
   blogs:
+    name: "Blogs"
     created: "Blog was successfully created."
     create_failed: "Blog was create failed ."
   title: "Title"

@@ -25,6 +25,5 @@ $(document).ready(function() {
   $('.panel.panel-chat > .panel-heading > #chatClose').click(function() {
     $(this).parent().parent().remove();
   });
-  $('.panel-body').stop().animate({
-    scrollTop: $('.panel-body')[0].scrollHeight}, 800);
+
 });

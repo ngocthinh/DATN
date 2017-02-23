@@ -1,5 +1,5 @@
 vi:
-  search: "Tìm kiếm"
+  search_button: "Tìm kiếm"
   succeed: "Thành công"
   remove: "Xóa"
   dictionary:
@@ -53,6 +53,29 @@ vi:
   comment_content: "Nội dung bình luận"
   notification: "Thông báo"
   like_button: "Thích"
+  create_account: "Tạo tài khoản"
+  create_project: "Tạo dự án"
+  edit_home: "Thiết kế trang chủ website"
+  save: "Xác nhận lưu"
+  cancel: "Hủy bỏ"
+  admin:
+    projects:
+      remove: "Xóa"
+      label: "Dự án"
+      created: " Tạo dự án thành công ."
+      create_failed: "Tạo dự án thất bại ."
+      check_max_files: "Dự án chỉ bao gồm không quá 5 ảnh và ít nhất 1 ảnh."
+      add_member: "Thêm Thành Viên"
+      new:
+        add_a_photo: "Thêm ảnh"
+        save: "Tạo dự án"
+        reset: "Làm mới"
+      edit:
+        save: "Xác nhận lưu"
+        cancel: "Hủy bỏ"
+      index:
+        search_project: "Tìm kiếm dự án"
+        all: "Tất cả"
   contacts:
     create:
       success: "Cảm ơn bạn đã liên lạc với chúng tôi, vui lòng đợi nhóm dịch vụ khách hàng sẽ phản hồi với bạn sớm."
@@ -71,8 +94,6 @@ vi:
       idea: "Đề xuất ý tưởng"
       contact: "Liên hệ"
       about_team: "Chúng tôi"
-      create_account: "Tạo tài khoản"
-      create_project: "Tạo dự án"
   footer:
     menu:
       home: "Trang chủ |"
@@ -282,7 +303,7 @@ vi:
   format:
     datetime_create: "%m, %d %Y"
   categories: "Thể loại"
-  news: "Thông báo"
+  news: "Tin Tức"
   format:
     datetime_create: "%m, %d %Y"
   view:
@@ -295,8 +316,8 @@ vi:
   certification: "Chứng chỉ"
   certifications: "Các chứng chỉ"
   biography: "Tiểu sử"
-  techniques: "Các kỹ năng kỹ thuật"
-  blog_of_user: "Bài viết của "
+  techniques: "Các kỹ năng, kỹ thuật chuyên môn"
+  blog_of_user: "Bài viết "
   experience: "Kinh nghiệm"
   rank: "Cấp bậc"
   send_message: "Gởi tin nhắn"
@@ -324,6 +345,8 @@ vi:
   admin:
     home: "Trang chủ quản lý"
   blogs:
+    name: "Bài viết"
     created: " Tạo bài viết thành công ."
     create_failed: "Tạo bài viết thất bại ."
   title: "Tiêu đề"
+  blogs-home: "Bài viết"
