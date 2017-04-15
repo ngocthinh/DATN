@@ -10,6 +10,10 @@
           <%= render partial: "shared/like_blog",  locals: {blog: @blog, like: @like} %>
           <div class="post-meta text-uppercase">
             <span><%= I18n.l @blog.created_at, format: t("format.datetime_create") %></span>
+            <%= link_to "Edit", edit_blog_path(I18n.locale, @blog) %>
+            <div class="bookmark">
+              <%= render "blogs/bookmark", blog: @blog if user_signed_in? %>
+            </div>
             <span><%= t "in" %> <%= link_to @blog.category_name, blogs_path(category: @blog.category.id) %></span>
             <span><%= t "by" %> <%= link_to @blog.user_name, "" %></span>
           </div>
@@ -47,11 +51,14 @@
     </div>
   </div>
 </section>
-<section id="blog" class="margin-bottom-50" style="background: white; padding-top: 100px;">
+<section id="blog" class="margin-bottom-50" style="background: white;">
   <div class="container">
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-md-8">
+      <%= image_tag @blog.image.url ,
+          class: "img-responsive img-centered img-slide img-project" %>
         <div class="single-blog">
+          <hr>
           <article>
             <div class="post-article markdown">
               <%= markdown @blog.content %>
@@ -61,7 +68,7 @@
         <hr>
         <br/ >
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <%= render "categories/list_category", object: "blog" %>
       </div>
     </div>

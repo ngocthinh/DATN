@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
 
   def index
     if params[:category].blank?
-      @blogs = Post.blog.order_by_newest.page(params[:page]).per Settings.per_page.blog
+      @blogs = Post.blog.order_by_newest.page(params[:page]).per 5
     else
       @category = Category.find_by id: params[:category]
       if @category
@@ -43,6 +43,21 @@ class BlogsController < ApplicationController
     else
       flash[:danger] = t "blogs.create_failed"
       render :new
+    end
+  end
+
+  def edit
+    @blog = Post.find_by id: params[:id]
+  end
+
+  def update
+    @blog = Post.find_by id: params[:id]
+    @blog.update_attributes post_params
+    if @blog.save
+      flash[:success] = t "succeed"
+      redirect_to blog_path(I18n.locale, @blog)
+    else
+      render :edit
     end
   end
 

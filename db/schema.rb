@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170221094600) do
+ActiveRecord::Schema.define(version: 20170414030924) do
 
   create_table "attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "path"
@@ -27,9 +27,18 @@ ActiveRecord::Schema.define(version: 20170221094600) do
     t.datetime "updated_at"
   end
 
+  create_table "bookmarks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_bookmarks_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_bookmarks_on_user_id", using: :btree
+  end
+
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.string   "target_type"
+    t.integer  "target_type"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -52,12 +61,14 @@ ActiveRecord::Schema.define(version: 20170221094600) do
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
     t.integer  "target_id"
     t.string   "target_type"
     t.string   "name"
     t.text     "content",     limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -275,6 +286,7 @@ ActiveRecord::Schema.define(version: 20170221094600) do
 
   add_foreign_key "certificate_users", "certifications"
   add_foreign_key "certificate_users", "users"
+  add_foreign_key "comments", "users"
   add_foreign_key "feedbacks", "projects"
   add_foreign_key "likes", "users"
   add_foreign_key "messages", "projects"

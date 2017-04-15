@@ -25,12 +25,18 @@
     <div class="row">
       <div class="col-md-9">
         <% @blogs.each do |blog| %>
-          <div class="single-blog">
+        <div class="col-md-12 single-blog">
             <article>
+            <div class="col-md-4">
               <div class="post-thumb">
                 <%= image_tag blog.image.url, class: "img-responsive resize-blog" %>
               </div>
-              <h4 class="post-title"><%= link_to blog.title, "" %></h4>
+              </div>
+              <div class="col-md-8">
+              <h4 class="post-title"><%= link_to blog.title, blog_path(I18n.locale, blog) %></h4>
+              <div class="bookmark">
+                <%= render "blogs/bookmark", blog: blog if user_signed_in? %>
+              </div>
               <div class="post-meta text-uppercase">
                 <span><%= I18n.l blog.created_at, format: t("format.datetime_create") %></span>
                 <span><%= t "in" %> <%= link_to blog.category_name, blogs_path(category: blog.category.id) %></span>
@@ -39,12 +45,15 @@
               <div class="post-article markdown">
                 <%= markdown blog.content.truncate(Settings.description_markdown) %>...
               </div>
-              <%= link_to t("read_more"), blog_path(I18n.locale, blog), class: "btn btn-readmore" %>
+
+              </div>
             </article>
           </div>
+         <br />
+        <hr />
         <% end %>
-        <hr>
-        
+
+
       </div>
       <div class="col-md-3">
         <div class="sidebar-widget">

@@ -38,4 +38,8 @@ module ApplicationHelper
     }
     Redcarpet::Markdown.new(renderer, options).render(content).html_safe
   end
+
+  def bookmarked?(user, blog)
+    Bookmark.find_by user_id: user.id, post_id: blog.id
+  end
 end
