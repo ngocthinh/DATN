@@ -245,8 +245,10 @@ ActiveRecord::Schema.define(version: 20170415065854) do
 
   create_table "techniques", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "skill"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_techniques_on_category_id", using: :btree
   end
 
   create_table "technologies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -304,5 +306,6 @@ ActiveRecord::Schema.define(version: 20170415065854) do
   add_foreign_key "projects", "categories"
   add_foreign_key "socials", "users"
   add_foreign_key "target_techniques", "techniques"
+  add_foreign_key "techniques", "categories"
   add_foreign_key "technologies", "categories"
 end

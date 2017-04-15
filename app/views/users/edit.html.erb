@@ -61,26 +61,30 @@
                   </header>
                   <%= f.text_area :biography, class: "form-control input-md" %>
                 </div>
+                <div class="user-techniques">
+                <strong><%= t "user_technique" %>:
+                </strong>
+                <br>
+                <%- @categories.each do |category| %>
+                  <span class="badge">
+                    <%= check_box_tag "users[]", category.id, false,
+                    id: "categories-add-#{category.id}",
+                    onclick: "check_categories(this)" %>
+                    <%= h category.name %>
+                  </span>
+                  <div class="technique-add-<%= category.id %>"></div>
+                  <hr>
+                <% end %>
+
+              </div>
                 <div class="button-edit">
                   <%= f.submit t(".save"), class: "btn btn-success" %>
                   <%= link_to t(".cancel"), user_path(I18n.locale, @user),
                     class: "btn btn-default" %>
                 </div>
               </div>
-              <div>
-                <strong><%= t "user_technique" %>:</strong>
-                <%- @categories.each do |category| %>
-                    <%= check_box_tag "users[]", category.id, false,
-                    id: "categories-add-#{category.id}", class: "categories-add",
-                    onclick: "check_categories(this)" %>
-                    <%= h category.name %>
-                    <div class="technique-add-<%= category.id %>"></div>
-                <% end %>
 
-              </div>
-              <div class="form-choose-technique">
-               <%= render "shared/choose_technique", object: @user %>
-              </div>
+
             </div>
           </div>
         </div>

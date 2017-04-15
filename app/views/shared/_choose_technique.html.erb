@@ -1,9 +1,9 @@
-<% if Technology.all.any? %>
-  <% Technology.all.each do |t| %>
-    <label class="choose-technique" title="<%= t.name %>">
+<% if techniques.any? %>
+  <% techniques.each do |t| %>
+    <label class="choose-technique" title="<%= t.skill %>">
     <%= check_box_tag "technique_ids[]", t.id,
       object.techniques.include?(t) %>
-    <%= truncate t.name,
+    <%= truncate t.skill,
       length: 20 %>
     </label>
   <% end %>

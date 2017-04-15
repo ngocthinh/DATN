@@ -8,6 +8,11 @@ html, body {
   float: right;
 }
 
+.user-techniques {
+  margin-left: 25px;
+  margin-top: 20px;
+}
+}
 
 body {
   font-family: "Raleway", Helvetica, Arial, sans-serif;

@@ -6,25 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.create(name: "Website")
-Category.create(name: "Mobile")
-Category.create(name: "Embedded")
-Category.create(name: "Game")
-Category.create(name: "Multi Platform")
+Category.create(name: "Website", target_type: 1)
+Category.create(name: "Mobile", target_type: 1)
+Category.create(name: "Embedded", target_type: 1)
+Category.create(name: "Game", target_type: 1)
+Category.create(name: "Multi Platform", target_type: 1)
 
-Technique.create(skill: "Ruby on Rails")
-Technique.create(skill: "PHP")
-Technique.create(skill: "Java")
-Technique.create(skill: "Android")
-Technique.create(skill: "Pythod")
-Technique.create(skill: "Javascript")
-Technique.create(skill: "GitHub")
-Technique.create(skill: "Design Pattern")
-Technique.create(skill: "SQL")
-Technique.create(skill: "Design")
-Technique.create(skill: "IOS")
-Technique.create(skill: "Unity")
-Technique.create(skill: ".Net")
+Technique.create(skill: "Ruby on Rails", category_id: 1)
+Technique.create(skill: "PHP", category_id: 1)
+Technique.create(skill: "Java-Web", category_id: 1)
+Technique.create(skill: "Android", category_id: 2)
+Technique.create(skill: "Pythod", category_id: 1)
+Technique.create(skill: "Javascript", category_id: 1)
+Technique.create(skill: "GitHub", category_id: 1)
+Technique.create(skill: "Design Pattern", category_id: 1)
+Technique.create(skill: "SQL", category_id: 1)
+Technique.create(skill: "Design", category_id: 3)
+Technique.create(skill: "IOS", category_id: 2)
+Technique.create(skill: "Unity", category_id: 4)
+Technique.create(skill: ".Net", category_id: 4)
 
 Certification.create(description: "For though result and talent add are parish valley.",
   name: "Agile")
@@ -37,8 +37,8 @@ Certification.create(description: "Microsoft Certified Systems Engineer ",
 Certification.create(description: "FTimed voice share led his widen noisy young",
   name: "CompTIA A+")
 
-u = User.create(name: "Ky Huu Hai", email:"admin@gmail.com", user_name: "Admin",
-  password: "password123", position: "PM",
+u = User.create(name: "Nguyen Ngoc Thinh", email:"admin@gmail.com", user_name: "Admin",
+  password: "12345678", position: "PM",
   biography: "Rooms oh fully taken by worse do.Points afraid but may end law lasted.
    Was out laughter raptures returned outweigh.", phone: "01212129827")
 

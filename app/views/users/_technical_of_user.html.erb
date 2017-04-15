@@ -1,6 +1,14 @@
 <header class="header-block-line">
   <h4 class="title"><%= t "techniques" %></h4>
 </header>
-<% object.each do |technique| %>
-  <p>- <%= technique.skill %></p>
+<% Category.all.each do |category| %>
+  <% @techniques = object.select {|technique| technique.category == category} %>
+  <% if @techniques.any? %>
+  <span class="label label-warning"><%= category.name %></span> :
+  <% @techniques.each do |technique| %>
+ / <%= technique.skill %>
 <% end %>
+<hr>
+<% end %>
+<% end %>
+

@@ -28,5 +28,6 @@ Rails.application.routes.draw do
     resources :messages
   end
   resources :bookmarks, only: [:create, :destroy]
+  resources :user_techniques, only: :index
   mount ActionCable.server => "/cable"
 end

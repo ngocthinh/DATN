@@ -31,8 +31,12 @@ class UsersController < ApplicationController
   end
 
   def update
+    binding.pry
     @user.update_attributes user_params
+    @technique_params = Supports::UserTechniques
+      .new current_user, params[:technique_ids]
     if @user.save
+      @technique_params.user_techniques
       flash[:success] = t "succeed"
       redirect_to user_path(I18n.locale, @user)
     else
@@ -60,5 +64,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :name, :user_name, :email, :password,
       :password_confirmation, :avatar, :biography, :position, :phone
+  end
+
+  def add_techniques
+
   end
 end
