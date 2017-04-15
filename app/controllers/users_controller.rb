@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @categories = Category.project
   end
 
   def update
