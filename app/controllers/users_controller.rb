@@ -31,8 +31,8 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
       format.js do
-        render partial: "admin/categories/form",
-          locals: {category: @category, button_text: t(".update_project")},
+        render partial: "users/form",
+          locals: {user: @user,categories: @categories, button_text: t(".update_project")},
           layout: false
       end
     end

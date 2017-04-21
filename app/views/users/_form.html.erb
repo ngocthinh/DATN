@@ -1,0 +1,110 @@
+<%= form_for user, url: user_path, html: {method: :put} do |f| %>
+  <div class="row">
+    <div class="col-lg-9 col-md-10 col-sm-10 card">
+      <div class="mywork-reg">
+        <div class="mywork-form-reg main-detail-job">
+          <div class="company-info">
+            <div class="job-company-info-edit ">
+              <h3 class="comp-name"><%= t "profile" %></h3>
+              <div class="boxcontact-copmpany">
+                <table class="ui very basic collapsing celled table width-100">
+                  <tbody>
+                    <tr>
+                      <td class="width-30">
+                        <strong><%= t "name" %>:</strong>
+                      </td>
+                      <td>
+                        <%= f.text_field :name, class: "form-control input-md" %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="width-30">
+                        <strong><%= t "user_name" %>:</strong>
+                      </td>
+                      <td>
+                        <%= f.text_field :user_name, class: "form-control input-md" %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="width-30">
+                        <strong><%= t "email" %>:</strong>
+                      </td>
+                      <td>
+                        <%= f.text_field :email, class: "form-control input-md" %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="width-30">
+                        <strong><%= t "phone-user" %>:</strong>
+                      </td>
+                      <td>
+                        <%= f.text_field :phone, class: "form-control input-md" %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="width-30">
+                        <strong><%= t "user_position" %>:</strong>
+                      </td>
+                      <td>
+                        <%= f.text_field :position, class: "form-control input-md" %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="block_info contentdef">
+              <div class="desjob-company col-md-12">
+                <header class="header-block-line">
+                  <h4 class="title"><%= t "biography" %></h4>
+                </header>
+                <%= f.text_area :biography, class: "form-control input-md" %>
+              </div>
+              <div class="user-techniques">
+              <strong><%= t "user_technique" %>:
+              </strong>
+              <br>
+              <%- categories.each do |category| %>
+                <span class="badge">
+                  <%= h category.name %>
+                </span>
+                <div class="form-choose-technique">
+                  <%= render "shared/choose_technique", object: current_user,
+                  techniques: category.techniques %>
+                </div>
+                <hr>
+              <% end %>
+
+            </div>
+              <div class="button-edit">
+                <%= f.submit t(".save"), class: "btn btn-success" %>
+                <%= link_to t(".cancel"), user_path(I18n.locale, user),
+                  class: "btn btn-default" %>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-2 col-sm-2 card">
+      <div class="main-box clearfix">
+        <header class="main-box-header clearfix">
+          <center><h3><%= user.name %></h3></center>
+        </header>
+        <div class="main-box-body clearfix">
+            <%= image_tag f.object.avatar.url,
+              class: "profile-img img-responsive center-block img-profile-user" %>
+          <div class="file-field-user">
+            <center>
+              <%= f.file_field :avatar %>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="margin-bottom-50"></div>
+  </div>
+<% end %>

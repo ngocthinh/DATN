@@ -20,6 +20,15 @@
             <%= t "date_member_join" %>: <%= I18n.l @user.created_at,
               format: t("format.datetime_create")  %>
           </div>
+          <br>
+          <div class="profile-since center">
+            <a href="#"
+              class="circular ui blue icon button"
+              id="btn_category_edit" data-id="<%= @user.id %>">
+              <i class="icon settings"></i>
+              <%= t ".edit_button" %>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -32,11 +41,6 @@
                 <h1 class="comp-name"><%= t "profile" %></h1>
               </div>
               <div class="col-md-6">
-                <%= link_to edit_user_path(I18n.locale, current_user),
-                  class: "circular ui blue icon button float-right" do %>
-                    <%= t "menu_edit_profile" %>
-                    <i class="icon settings"></i>
-                <% end %>
               </div>
               <div class="boxcontact-copmpany">
                 <table class="ui very basic collapsing celled table width-100">
@@ -120,4 +124,20 @@
   <br />
   <%= render "blogs/blogs_of_user", user: @user %>
   <div class="margin-bottom-50"></div>
+</div>
+
+
+<div class="modal fade" role="dialog" id="edit-user-modal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-body">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel"><%= "modal_title" %></h4>
+        </div>
+        <div class="modal-body" id="show-edit-user-form">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
