@@ -28,10 +28,17 @@ class UsersController < ApplicationController
 
   def edit
     @categories = Category.project
+    respond_to do |format|
+      format.html
+      format.js do
+        render partial: "admin/categories/form",
+          locals: {category: @category, button_text: t(".update_project")},
+          layout: false
+      end
+    end
   end
 
   def update
-    binding.pry
     @user.update_attributes user_params
     @technique_params = Supports::UserTechniques
       .new current_user, params[:technique_ids]

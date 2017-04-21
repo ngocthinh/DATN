@@ -10,7 +10,7 @@ class Supports::UserTechniques
       Technique.all.each do |technique|
         if @user.techniques.include? technique
           unless @params.include? technique.id.to_s
-            @user_technique = TargetTechnique.find_by technique_id: technique.id
+            @user_technique = @user.target_techniques.find_by technique_id: technique.id
             @user_technique.destroy
           end
         elsif @params.include? technique.id.to_s
