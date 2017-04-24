@@ -41,9 +41,10 @@ class UsersController < ApplicationController
   def update
     @user.update_attributes user_params
     @technique_params = Supports::UserTechniques
-      .new current_user, params[:technique_ids]
+      .new current_user, params
     if @user.save
       @technique_params.user_techniques
+      @technique_params.user_certifications
       flash[:success] = t "succeed"
       redirect_to user_path(I18n.locale, @user)
     else

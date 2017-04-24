@@ -22,12 +22,11 @@
           </div>
           <br>
           <div class="profile-since center">
-            <a href="#"
-              class="circular ui blue icon button"
-              id="btn_category_edit" data-id="<%= @user.id %>">
+            <%= link_to edit_user_path(I18n.locale, current_user),
+              class: "circular ui blue icon button" do %>
               <i class="icon settings"></i>
               <%= t ".edit_button" %>
-            </a>
+              <% end %>
           </div>
         </div>
       </div>

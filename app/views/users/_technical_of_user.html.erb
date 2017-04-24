@@ -6,7 +6,7 @@
   <% if @techniques.any? %>
   <span class="label label-warning"><%= category.name %></span> :
   <% @techniques.each do |technique| %>
- / <%= technique.skill %>
+  | <%= technique.skill %> |
 <% end %>
 <hr>
 <% end %>

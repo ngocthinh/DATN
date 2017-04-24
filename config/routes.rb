@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     end
     namespace :admin do
       root "admin#index"
+      resources :certifications
       resources :homes
       resources :users
       resources :projects do

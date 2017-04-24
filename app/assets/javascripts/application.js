@@ -32,3 +32,4 @@
 //= require_tree ./channels
 //= require simplemde.min
 //= require user_edit
+//= require chosen-jquery
