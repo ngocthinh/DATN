@@ -39,7 +39,7 @@
     <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td id="category-name-<%= category.id %>"><%= category.name %></td>
+        <td id="category-name-<%= category.id %>"><label><%= category.name %></label></td>
         <td><%= link_to t(".see_techniques"), "javascript:;", data: {id: category.id},
           class: "btn btn-default techniques-of-category right" %>
             <%= link_to t(".edit"), "javascript:;", data: {id: category.id},

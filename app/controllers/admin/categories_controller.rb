@@ -8,6 +8,7 @@ class Admin::CategoriesController < Admin::AdminController
   end
 
   private
+
   def category_params
     params.require(:category).permit :name
   end
