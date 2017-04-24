@@ -1,0 +1,11 @@
+  <table class="table table-condensed">
+    <tbody>
+    <% techniques.each do |technique| %>
+      <tr>
+        <td id="technique-name-<%= technique.id %>"><%= technique.skill %></td>
+        <td><%= link_to t(".edit"), "javascript:;", data: {id: technique.id},
+          class: "btn btn-primary techniques-edit" %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
