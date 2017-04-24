@@ -5,7 +5,9 @@ class Admin::UsersController < Admin::AdminController
 
   def index
     @q = User.ransack params[:q]
-    @users = @q.result.page(params[:page]).per Settings.per_page.user
+    @users = @q.result.page(params[:page]).per Settings.per_page.admin_user
+    @certifications = Certification.all.page(params[:page]).per Settings.per_page.admin_user
+    @categories = Category.project.page(params[:page]).per Settings.per_page.admin_user
     respond_to do |format|
       format.html
       format.js

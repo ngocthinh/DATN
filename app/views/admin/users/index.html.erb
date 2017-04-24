@@ -7,16 +7,68 @@
 
 <div class="tab-content">
   <div id="home" class="tab-pane fade in active">
-    <h3>HOME</h3>
-    <p>Some content.</p>
+    <h3>All User</h3>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %><%= " (admin)" if user.has_role? :admin %></td>
+        <td><%= user.email %></td>
+        <td></td>
+      </tr>
+     <% end %>
+    </tbody>
+  </table>
+  <%= paginate @users %>
   </div>
   <div id="menu1" class="tab-pane fade">
-    <h3>Menu 1</h3>
-    <p>Some content in menu 1.</p>
+    <h3>All Techniques of users </h3>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>see all techniques of Category</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td></td>
+      </tr>
+     <% end %>
+    </tbody>
+  </table>
+  <%= paginate @categories %>
   </div>
   <div id="menu2" class="tab-pane fade">
-    <h3>Menu 2</h3>
-    <p>Some content in menu 2.</p>
+    <h3>All Certifications</h3>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>description</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @certifications.each do |certification| %>
+      <tr>
+        <td><%= certification.name %></td>
+        <td><%= certification.description %></td>
+        <td></td>
+      </tr>
+     <% end %>
+    </tbody>
+  </table>
+  <%= paginate @certifications %>
   </div>
 </div>
 </div>
