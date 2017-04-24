@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     namespace :admin do
       root "admin#index"
       resources :certifications
+      resources :categories
       resources :techniques
       resources :homes
       resources :users

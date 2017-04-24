@@ -44,9 +44,14 @@
           class: "btn btn-default techniques-of-category right" %>
             <%= link_to t(".edit"), "javascript:;", data: {id: category.id},
           class: "btn btn-default edit-category right" %>
+
           <%= link_to t(".delete"), "javascript:;", data: {id: category.id},
           class: "btn btn-default delete-category right" %>
+
           </td>
+          <td id="techniques-all-<%= category.id %>"></td>
+          <br>
+
       </tr>
      <% end %>
     </tbody>

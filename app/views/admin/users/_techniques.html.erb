@@ -4,7 +4,12 @@
       <tr>
         <td id="technique-name-<%= technique.id %>"><%= technique.skill %></td>
         <td><%= link_to t(".edit"), "javascript:;", data: {id: technique.id},
-          class: "btn btn-primary techniques-edit" %></td>
+          class: "btn primary techniques-edit" %>
+            <%= link_to t(".delete"), "javascript:;", data: {id: technique.id},
+          class: "btn danger techniques-edit" %>
+          <%= link_to t(".see more"), "javascript:;", data: {id: technique.id},
+          class: "btn info techniques-edit" %>
+          </td>
       </tr>
     <% end %>
     </tbody>
