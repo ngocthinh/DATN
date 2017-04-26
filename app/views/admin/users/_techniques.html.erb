@@ -1,22 +1,22 @@
-<table class="table table-condensed">
+<table class="table table-condensed-<%= @category.id %>">
   <tbody>
   <% techniques.each do |technique| %>
-    <tr>
-      <td id="technique-name-<%= technique.id %>"><%= technique.skill %></td>
+    <tr id="techniques-<%= technique.id %>">
+      <td id="technique-name-<%= technique.id %>"><label><%= technique.skill %></label></td>
       <td><%= link_to t(".edit"), "javascript:;", data: {id: technique.id},
         class: "btn primary techniques-edit" %>
           <%= link_to t(".delete"), "javascript:;", data: {id: technique.id},
-        class: "btn danger techniques-edit" %>
-        <%= link_to t(".see_more"), "javascript:;", data: {id: technique.id},
-        class: "btn info techniques-edit" %>
+        class: "btn danger techniques-delete" %>
         </td>
-
     </tr>
-
   <% end %>
+    <tr>
+       <td><%= link_to t(".hidden"), "javascript:;", data: {id: @category.id},
+        class: "btn info techniques-hidden" %></td>
+    </tr>
   </tbody>
 </table>
-<table class="table table-condensed">
+<table class="table table-condensed-<%= @category.id %>">
   <tbody>
     <tr>
       <td><%= link_to t(".add"), "javascript:;", data: {id: @category.id},

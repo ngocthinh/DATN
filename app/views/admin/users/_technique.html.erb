@@ -1,0 +1,11 @@
+<tr id="techniques-<%= @category.id %>">
+      <td id="technique-name-<%= technique.id %>"><%= technique.skill %></td>
+      <td><%= link_to t(".edit"), "javascript:;", data: {id: technique.id},
+        class: "btn primary techniques-edit" %>
+          <%= link_to t(".delete"), "javascript:;", data: {id: technique.id},
+        class: "btn danger techniques-edit" %>
+        <%= link_to t(".see_more"), "javascript:;", data: {id: technique.id},
+        class: "btn info techniques-edit" %>
+        </td>
+
+    </tr>
