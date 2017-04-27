@@ -1,0 +1,18 @@
+<div class="col-md-12">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <%= form_for [I18n.locale,:admin, certification], url: admin_certification_path, remote: :true do |f| %>
+      <%= render "shared/error_messages",object: certification %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description, class: "form-control" %>
+
+      </br>
+      <center><%= f.submit "Save", class: "add-certification-button" %></center>
+    <% end %>
+  </div>
+  <div class="col-md-3"></div>
+</div>

@@ -29,6 +29,15 @@ class Admin::UsersController < Admin::AdminController
     end
   end
 
+  def destroy
+    @user = User.find_by id: params[:id]
+    if @user.destroy
+      redirect_to admin_users_path
+    else
+      redirect_to :back
+    end
+  end
+
   def edit
   end
 

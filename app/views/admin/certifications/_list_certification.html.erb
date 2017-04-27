@@ -1,0 +1,21 @@
+<table class="table table-striped">
+ <h3>All Certifications</h3>
+<thead>
+      <tr>
+        <th>Name</th>
+        <th>description</th>
+        <th></th>
+        <th><%= link_to t(".add"), "#", class: "btn btn-primary add-certification center" %></th>
+      </tr>
+    </thead>
+    <tbody>
+<% certifications.each do |certification| %>
+      <tr>
+        <td><%= certification.name %></td>
+        <td><%= certification.description %></td>
+        <td><%= link_to t(".delete"), admin_certification_path(id: certification.id), method: :delete, data: { confirm: t("confirm_delete") }, class: "btn btn-primary delete-certification right" %></td>
+        <td><%= link_to t(".edit"), "#", data: {id: certification.id}, class: "btn btn-primary edit-certification center" %></td>
+      </tr>
+     <% end %>
+     </tbody>
+       </table>
