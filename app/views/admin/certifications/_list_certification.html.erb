@@ -14,7 +14,7 @@
         <td><%= certification.name %></td>
         <td><%= certification.description %></td>
         <td><%= link_to t(".delete"), admin_certification_path(id: certification.id), method: :delete, data: { confirm: t("confirm_delete") }, class: "btn btn-primary delete-certification right" %></td>
-        <td><%= link_to t(".edit"), "#", data: {id: certification.id}, class: "btn btn-primary edit-certification center" %></td>
+        <td><%= link_to t(".edit"), "#", data: {id: certification.id}, class: "btn btn-primary edit-certification" %></td>
       </tr>
      <% end %>
      </tbody>

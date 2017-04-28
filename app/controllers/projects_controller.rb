@@ -14,6 +14,10 @@ class ProjectsController < ApplicationController
     @projects = Kaminari.paginate_array(@q.result.show_for_rating)
       .page(params[:page]).per(Settings.per_page.projects)
     @categories = Category.all
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create

@@ -5,12 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+h = Home.create title: "Framgia", sologan: "make it awesome", description: "ARE YOU READY TO MAKE IT AWESOME WITH US?", language: :en
+i = Image.new target_id: 1, target_type: "Home"
+i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/18.jpg')))
+i.save
 
-Category.create(name: "Website", target_type: 1)
-Category.create(name: "Mobile", target_type: 1)
-Category.create(name: "Embedded", target_type: 1)
-Category.create(name: "Game", target_type: 1)
-Category.create(name: "Multi Platform", target_type: 1)
+i1 = Image.new target_id: 1, target_type: "Home"
+i1.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/26.jpg')))
+i1.save
+
+Category.create(name: "Website", target_type: 2)
+Category.create(name: "Mobile", target_type: 2)
+Category.create(name: "Embedded", target_type: 2)
+Category.create(name: "Game", target_type: 2)
+Category.create(name: "Multi Platform", target_type: 2)
+Category.create(name: "Other", target_type: 2)
 
 Technique.create(skill: "Ruby on Rails", category_id: 1)
 Technique.create(skill: "PHP", category_id: 1)
@@ -18,13 +27,16 @@ Technique.create(skill: "Java-Web", category_id: 1)
 Technique.create(skill: "Android", category_id: 2)
 Technique.create(skill: "Pythod", category_id: 1)
 Technique.create(skill: "Javascript", category_id: 1)
-Technique.create(skill: "GitHub", category_id: 1)
-Technique.create(skill: "Design Pattern", category_id: 1)
-Technique.create(skill: "SQL", category_id: 1)
+Technique.create(skill: "GitHub", category_id: 6)
+Technique.create(skill: "Design Pattern", category_id: 6)
+Technique.create(skill: "SQL", category_id: 6)
 Technique.create(skill: "Design", category_id: 3)
 Technique.create(skill: "IOS", category_id: 2)
 Technique.create(skill: "Unity", category_id: 4)
 Technique.create(skill: ".Net", category_id: 4)
+Technique.create(skill: "Java", category_id: 5)
+Technique.create(skill: "Assembly", category_id: 3)
+Technique.create(skill: "C", category_id: 3)
 
 Certification.create(description: "For though result and talent add are parish valley.",
   name: "Agile")
@@ -45,15 +57,15 @@ u = User.create(name: "Nguyen Ngoc Thinh", email:"admin@gmail.com", user_name: "
 u.add_role :admin
 
 5.times do |e|
-  TargetTechnique.create!(target_id: u.id, target_type: "User", technique_id: "#{e+1}")
-  u.certificate_users.create!(user_id: u.id, certification_id: "#{e+1}")
+  TargetTechnique.create!(target_id: e+1, target_type: "User", technique_id: "#{e+1}")
+  u.certificate_users.create!(user_id: e+1, certification_id: "#{e+1}")
 end
 
 30.times do |i|
   name  = "member #{i+1}"
   email = "user#{i+1}@gmail.com"
   user_name = "Username #{i+1}"
-  password = "password123"
+  password = "12345678"
   position = "Developer"
   biography = "Rooms oh fully taken by worse do. Points afraid but may end law lasted.
   Was out laughter raptures returned outweigh."
@@ -61,6 +73,8 @@ end
 
   u = User.create!(name:  name, email: email, password: password, position: position,
     biography: biography, user_name: user_name, phone: phone)
+  u.avatar.store!(File.open(File.join(Rails.root, '/public/uploads/default/'+"#{i+1}"+'.jpg')))
+  u.save
 
   5.times do |e|
     TargetTechnique.create!(target_id: u.id, target_type: "User", technique_id: "#{e+1}")

@@ -16,6 +16,10 @@ class User < ApplicationRecord
   has_many :target_techniques, as: :target
   has_many :bookmarks, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
+  has_attached_file :document
+  validates_attachment :document, content_type: { content_type: %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
 
   mount_uploader :avatar, ImageUploader
   mount_uploader :cover_photo, ImageUploader

@@ -4,7 +4,52 @@ html, body {
   height: 100%;
 }
 
+.search-projects {
+  width: 20%;
+}
 
+.comment-edit{
+    float:right;
+    background-color: #4C7AAF;
+    height: 24px;
+    width: 48px;
+    border: none;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;#006BFF
+}
+
+#comment-time{
+  align: center;
+  margin-left: 50px;
+}
+
+#comment-content{
+  margin-left: 50px;
+   -webkit-box-decoration-break: clone;
+}
+
+#comment-name{
+  margin-left: 10px;
+}
+
+#user-image-comment{
+  height: 45px;
+  width: 45px;
+}
+
+.delete-comment{
+  height: 20px;
+  width: 20px;
+}
+
+
+.user-index-avatar {
+  height: 100px !important;
+}
 
 .bookmark .btn {
   float: right;
@@ -1845,3 +1890,4 @@ ul.content-flickr li {
 .margin-left-45 {
   margin-left: -45px;
 }
+

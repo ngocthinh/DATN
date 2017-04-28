@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170415065854) do
+ActiveRecord::Schema.define(version: 20170427043728) do
 
   create_table "attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "path"
@@ -61,12 +61,14 @@ ActiveRecord::Schema.define(version: 20170415065854) do
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
     t.integer  "target_id"
     t.string   "target_type"
     t.string   "name"
     t.text     "content",     limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -282,6 +284,10 @@ ActiveRecord::Schema.define(version: 20170415065854) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
@@ -294,6 +300,7 @@ ActiveRecord::Schema.define(version: 20170415065854) do
 
   add_foreign_key "certificate_users", "certifications"
   add_foreign_key "certificate_users", "users"
+  add_foreign_key "comments", "users"
   add_foreign_key "feedbacks", "projects"
   add_foreign_key "likes", "users"
   add_foreign_key "messages", "projects"
