@@ -16,8 +16,8 @@
   </li>
   <ul class="sub-menu collapse" id="products">
     <li class="active"><%= link_to t("all") %></li>
-    <li><%= link_to "" do %><%= t("header.menu.project") %><% end %></li>
-    <li><%= link_to "" do %><%= t("user") %><% end %></li>
+    <li><%= link_to admin_categories_path do %><%= t("header.menu.category_techniques") %><% end %></li>
+    <li><%= link_to admin_certifications_path do %><%= t("certification") %><% end %></li>
     <li><%= link_to t("header.menu.blog") %></li>
     <li><%= link_to t("header.menu.new") %></li>
     <li><%= link_to t("slide") %></li>
@@ -28,7 +28,7 @@
   </li>
 
   <li>
-    <%= link_to "" do %><i class="fa fa-undo"></i> <%= t "back_home" %> <% end %>
+    <%= link_to "" do %><i class="fa fa-undo"></i> <%= t "statistics charts" %> <% end %>
   </li>
   <li>
     <%= link_to destroy_user_session_path(locale: I18n.locale), method: :delete do %>

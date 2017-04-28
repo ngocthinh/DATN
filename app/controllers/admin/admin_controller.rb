@@ -11,5 +11,6 @@ class Admin::AdminController < ApplicationController
   end
 
   def index
+
   end
 end

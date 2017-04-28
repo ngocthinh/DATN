@@ -39,6 +39,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user.document = params[:user][:document] unless params[:user][:document].nil?
     @user.update_attributes user_params
     @technique_params = Supports::UserTechniques
       .new current_user, params

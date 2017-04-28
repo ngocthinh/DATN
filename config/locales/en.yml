@@ -59,7 +59,6 @@ en:
       fail: "sorry! something is wrong, you need send message again!"
   comment : "was comment"
   send: "Send"
-  projects: "Projects"
   joined_in: "Joined in"
   member_framgia: "Member"
   header:
@@ -131,6 +130,7 @@ en:
       reset: "Reset"
     index:
       search_project: "Search Projects"
+      placeholder: "Search Projects"
       all: "All"
   users:
     label_position: "Position of him/her for your project:"

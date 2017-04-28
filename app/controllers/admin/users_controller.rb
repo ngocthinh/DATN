@@ -5,7 +5,9 @@ class Admin::UsersController < Admin::AdminController
 
   def index
     @q = User.ransack params[:q]
-    @users = @q.result.page(params[:page]).per Settings.per_page.user
+    @users = @q.result.page(params[:page]).per Settings.per_page.admin_user
+    @certifications = Certification.all.page(params[:page]).per Settings.per_page.admin_user
+    @categories = Category.project.page(params[:page]).per Settings.per_page.admin_user
     respond_to do |format|
       format.html
       format.js
@@ -24,6 +26,15 @@ class Admin::UsersController < Admin::AdminController
     else
       flash[:error] = t "profile.create_fail"
       render new_admin_user_path
+    end
+  end
+
+  def destroy
+    @user = User.find_by id: params[:id]
+    if @user.destroy
+      redirect_to admin_users_path
+    else
+      redirect_to :back
     end
   end
 

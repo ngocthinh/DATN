@@ -22,11 +22,16 @@
           </div>
           <br>
           <div class="profile-since center">
+          <% if current_user == @user %>
             <%= link_to edit_user_path(I18n.locale, current_user),
               class: "circular ui blue icon button" do %>
               <i class="icon settings"></i>
               <%= t ".edit_button" %>
               <% end %>
+              <% end %>
+              <br>
+              <hr>
+                <%= link_to @user.name + " CV", @user.document.url if @user.document.file? %>
           </div>
         </div>
       </div>
@@ -126,17 +131,3 @@
 </div>
 
 
-<div class="modal fade" role="dialog" id="edit-user-modal">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-body">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><%= "modal_title" %></h4>
-        </div>
-        <div class="modal-body" id="show-edit-user-form">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

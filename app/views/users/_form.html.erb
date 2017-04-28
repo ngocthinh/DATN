@@ -1,6 +1,6 @@
-<%= form_for user, url: user_path, html: {method: :put} do |f| %>
+<%= form_for user, url: user_path, html: {method: :put, :multipart => true} do |f| %>
   <div class="row">
-    <div class="col-lg-9 col-md-10 col-sm-10 card">
+    <div class="col-lg-9 col-md-10 col-sm-10 card margin-bottom-50">
       <div class="mywork-reg">
         <div class="mywork-form-reg main-detail-job">
           <div class="company-info">
@@ -74,7 +74,7 @@
                 <strong><h4 class="title"><%= t "user_techniques" %></h4>
                 </strong>
               </header>
-              <%- categories.each do |category| %>
+              <% categories.each do |category| %>
                 <span class="badge">
                   <%= h category.name %>
                 </span>
@@ -86,8 +86,15 @@
               <% end %>
 
             </div>
-
-
+            <div class="desjob-company col-md-12">
+            <div class="col-sm-3 margin-left-25">
+              <span class="label label-warning">
+               <i class="glyphicon glyphicon-paperclip">update cv :</i></span>
+               </div>
+               <div class="col-lg-3 col-md-4 col-sm-4">
+               <%= f.file_field :document %>
+               </div>
+            </div>
               <div class="button-edit">
                 <%= f.submit t(".save"), class: "btn btn-success" %>
                 <%= link_to t(".cancel"), user_path(I18n.locale, user),
@@ -110,6 +117,7 @@
               class: "profile-img img-responsive center-block img-profile-user" %>
           <div class="file-field-user">
             <center>
+            update avarta:
               <%= f.file_field :avatar %>
             </center>
           </div>
