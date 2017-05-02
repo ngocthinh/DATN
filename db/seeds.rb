@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 h = Home.create title: "Framgia", sologan: "make it awesome", description: "ARE YOU READY TO MAKE IT AWESOME WITH US?", language: :en
 i = Image.new target_id: 1, target_type: "Home"
-i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/18.jpg')))
+i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/users/18.jpg')))
 i.save
 
 i1 = Image.new target_id: 1, target_type: "Home"
-i1.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/26.jpg')))
+i1.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/users/16.jpg')))
 i1.save
 
 Category.create(name: "Website", target_type: 2)
@@ -30,7 +30,7 @@ Technique.create(skill: "Javascript", category_id: 1)
 Technique.create(skill: "GitHub", category_id: 6)
 Technique.create(skill: "Design Pattern", category_id: 6)
 Technique.create(skill: "SQL", category_id: 6)
-Technique.create(skill: "Design", category_id: 3)
+Technique.create(skill: "Design", category_id: 6)
 Technique.create(skill: "IOS", category_id: 2)
 Technique.create(skill: "Unity", category_id: 4)
 Technique.create(skill: ".Net", category_id: 4)
@@ -38,16 +38,39 @@ Technique.create(skill: "Java", category_id: 5)
 Technique.create(skill: "Assembly", category_id: 3)
 Technique.create(skill: "C", category_id: 3)
 
-Certification.create(description: "For though result and talent add are parish valley.",
+c1 = Certification.create(description: "For though result and talent add are parish valley.",
   name: "Agile")
-Certification.create(description: "Cisco Certified Network Associate",
+c1.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/certifications/certification_agile.jpg')))
+c1.save
+c2 = Certification.create(description: "Cisco Certified Network Associate",
   name: "CCNA")
-Certification.create(description: "Certified Information Systems Security Professional",
+c2.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/certifications/certification_ccna.jpg')))
+c2.save
+
+c3 = Certification.create(description: "Certified Information Systems Security Professional",
   name: "CISSP")
-Certification.create(description: "Microsoft Certified Systems Engineer ",
+c3.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/certifications/certification_CISSP.jpg')))
+c3.save
+
+c4 = Certification.create(description: "Microsoft Certified Systems Engineer ",
   name: "MCSE")
-Certification.create(description: "FTimed voice share led his widen noisy young",
+c4.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/certifications/certification_MCSE.jpg')))
+c4.save
+
+c5 = Certification.create(description: "FTimed voice share led his widen noisy young",
   name: "CompTIA A+")
+c5.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/certifications/certification_comtiaA+.jpg')))
+c5.save
+
+c6 = Certification.create(description: "Oracle certification tracks",
+  name: "Oracle")
+c6.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/certifications/certification_oracle.jpg')))
+c6.save
+
+c7 = Certification.create(description: "IBM certifications",
+  name: "IBM Corporation")
+c7.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/certifications/certification_IBM Corporation.jpg')))
+c7.save
 
 u = User.create(name: "Nguyen Ngoc Thinh", email:"admin@gmail.com", user_name: "Admin",
   password: "12345678", position: "PM",
@@ -73,7 +96,7 @@ end
 
   u = User.create!(name:  name, email: email, password: password, position: position,
     biography: biography, user_name: user_name, phone: phone)
-  u.avatar.store!(File.open(File.join(Rails.root, '/public/uploads/default/'+"#{i+1}"+'.jpg')))
+  u.avatar.store!(File.open(File.join(Rails.root, '/public/uploads/default/users/'+"#{i+1}"+'.jpg')))
   u.save
 
   5.times do |e|

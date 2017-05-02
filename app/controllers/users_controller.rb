@@ -27,7 +27,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @categories = Category.project
     respond_to do |format|
       format.html
       format.js do

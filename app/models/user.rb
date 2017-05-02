@@ -31,6 +31,7 @@ class User < ApplicationRecord
   scope :order_by_newest, ->{order created_at: :desc}
   scope :member_not_in_project, lambda { |ids| where(["id NOT IN (?)", ids]) if ids.any? }
 
+
   ratyrate_rateable :rating
 
   ratyrate_rater

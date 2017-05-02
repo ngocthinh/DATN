@@ -1,15 +1,19 @@
 <div class="col-md-12">
   <div class="col-md-3"></div>
   <div class="col-md-6">
-    <%= form_for [:admin, certification], url: admin_certification_path do |f| %>
-      <%= render "shared/error_messages",object: certification %>
+    <%= form_for [:admin, @certification] do |f| %>
+      <%= render "shared/error_messages",object: @certification %>
 
       <%= f.label :name %>
       <%= f.text_field :name, class: "form-control" %>
 
       <%= f.label :description %>
       <%= f.text_field :description, class: "form-control" %>
-      <%= f.file_field :image %>
+      <div class="file-field-user">
+        image:
+          <%= f.file_field :image %>
+      </div>
+
       </br>
       <center><%= f.submit "Save", class: "add-certification-button" %></center>
     <% end %>

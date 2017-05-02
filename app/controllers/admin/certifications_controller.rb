@@ -1,6 +1,21 @@
 class Admin::CertificationsController < Admin::AdminController
   load_and_authorize_resource
 
+  def new
+    @certification = Certification.new
+  end
+
+  def create
+    @certification = Certification.new certification_params
+    if @certification.save
+      flash[:success] = t "home_pages.created"
+      redirect_to admin_certifications_path
+    else
+      flash[:danger] = t "images.create_failed"
+      render :new
+    end
+  end
+
   def index
     @certifications = Certification.all.page(params[:page]).per Settings.per_page.admin_user
   end
@@ -20,10 +35,7 @@ class Admin::CertificationsController < Admin::AdminController
     @certification = Certification.find_by id: params[:id]
     @certification.update_attributes certification_params
     @certifications = Certification.all
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    redirect_to admin_certifications_path
   end
 
   def destroy
@@ -38,6 +50,6 @@ class Admin::CertificationsController < Admin::AdminController
   private
 
   def certification_params
-    params.require(:certification).permit :name, :description
+    params.require(:certification).permit :name, :description, :image
   end
 end

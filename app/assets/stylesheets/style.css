@@ -4,8 +4,16 @@ html, body {
   height: 100%;
 }
 
+.certification-user span{
+  padding: 5px
+}
+
 .search-projects {
   width: 20%;
+}
+
+.project-index {
+  margin-bottom: 20px;
 }
 
 .comment-edit{
