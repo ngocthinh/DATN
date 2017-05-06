@@ -10,10 +10,6 @@ i = Image.new target_id: 1, target_type: "Home"
 i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/users/18.jpg')))
 i.save
 
-i1 = Image.new target_id: 1, target_type: "Home"
-i1.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/users/16.jpg')))
-i1.save
-
 Category.create(name: "Website", target_type: 2)
 Category.create(name: "Mobile", target_type: 2)
 Category.create(name: "Embedded", target_type: 2)
@@ -105,7 +101,7 @@ end
   end
 end
 
-Project.create!(name: "WSM", url: "http://wsm.framgia.vn/", description: "Managing timesheet, leave,... in a working space", core_features: "Ruby", realease_note: "Waiting update", git_repository: "www.github.com", server_information: "Mysql", platform: "Web", pm_url: "wwww.link.com", branch: 1)
+Project.create!(name: "wsm", url: "http://wsm.framgia.vn/", description: "Managing timesheet, leave,... in a working space", core_features: "Ruby", realease_note: "Waiting update", git_repository: "www.github.com", server_information: "Mysql", platform: "Web", pm_url: "wwww.link.com", branch: 1)
 p = Project.last
 p.images.create
 p.category_id = 1
@@ -187,93 +183,145 @@ p.save
 
 Project.create!(name: "TMS", url: "http://education.framgia.vn/", description: "Training Management System", core_features: "Ruby", realease_note: "Waiting update", git_repository: "www.github.com", server_information: "Mysql", platform: "Website", pm_url: "wwww.link.com", branch: 0)
 p = Project.last
-p.images.create
+i = p.images.create
 p.category_id = 1
+i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/projects/ExpressVPN.jpg')))
+p.images.each do |image|
+  image = i
+end
 p.save
 
 Project.create!(name: "iShipper", url: "http://ishipper.framgia.vn/", description: "Connect Shop and Shipper", core_features: "Android, Ruby", realease_note: "Waiting update", git_repository: "www.github.com", server_information: "Mysql", platform: "Website", pm_url: "wwww.link.com", branch: 0)
 p = Project.last
-p.images.create
+i = p.images.create
 p.category_id = 1
+i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/projects/ExpressVPN.jpg')))
+p.images.each do |image|
+  image = i
+end
 p.save
 
 Project.create!(name: "FRSM", url: "Inprogress", description: "Framgia Recruitment System Management", core_features: "PHP", realease_note: "Waiting update", git_repository: "https://github.com/framgia/fportfolio/", server_information: "Mysql", platform: "Website", pm_url: "wwww.link.com", branch: 0)
 p = Project.last
-p.images.create
+i = p.images.create
 p.category_id = 1
+i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/projects/ExpressVPN.jpg')))
+p.images.each do |image|
+  image = i
+end
 p.save
 
 
 
 Project.create!(name: "MOS", url: "Inprogress", description: "Melody of Soul", core_features: "Ruby", realease_note: "Waiting update", git_repository: "https://github.com/framgia/fportfolio/", server_information: "Mysql", platform: "Website", pm_url: "wwww.link.com", branch: 0)
 p = Project.last
-p.images.create
+i = p.images.create
 p.category_id = 1
+i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/projects/ExpressVPN.jpg')))
+p.images.each do |image|
+  image = i
+end
 p.save
 
 
 
 Project.create!(name: "FStore", url: "Inprogress", description: "FStore providers online platform connecting consumers with store owner.", core_features: "PHP", realease_note: "Waiting update", git_repository: "https://github.com/framgia/fportfolio/", server_information: "Mysql", platform: "Website", pm_url: "wwww.link.com", branch: 0)
 p = Project.last
-p.images.create
+i = p.images.create
 p.category_id = 1
+i.image
+p.images.each do |image|
+  image = i
+end
 p.save
 
 
 
 Project.create!(name: "AC", url: "Inprogress", description: "Accounting System", core_features: "Ruby", realease_note: "Waiting update", git_repository: "https://github.com/framgia/fportfolio/", server_information: "Mysql", platform: "Website", pm_url: "wwww.link.com", branch: 0)
 p = Project.last
-p.images.create
+i = p.images.create
 p.category_id = 1
+i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/projects/ExpressVPN.jpg')))
+p.images.each do |image|
+  image = i
+end
 p.save
 
 
 
 Project.create!(name: "PMP", url: "Inprogress", description: "Project Management System", core_features: "Ruby", realease_note: "Waiting update", git_repository: "https://github.com/framgia/fportfolio/", server_information: "Mysql", platform: "Website", pm_url: "wwww.link.com", branch: 0)
 p = Project.last
-p.images.create
+i = p.images.create
 p.category_id = 1
+i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/projects/ExpressVPN.jpg')))
+p.images.each do |image|
+  image = i
+end
 p.save
 
 
 
 Project.create!(name: "FEDS", url: "Inprogress", description: "Manage e-document system", core_features: "Ruby", realease_note: "Waiting update", git_repository: "https://github.com/framgia/fportfolio/", server_information: "Mysql", platform: "Website", pm_url: "wwww.link.com", branch: 0)
 p = Project.last
-p.images.create
+i = p.images.create
 p.category_id = 1
+i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/projects/ExpressVPN.jpg')))
+p.images.each do |image|
+  image = i
+end
 p.save
 
 
 Project.create!(name: "CRB", url: "Inprogress", description: "Calendar system", core_features: "Ruby", realease_note: "Waiting update", git_repository: "https://github.com/framgia/fportfolio/", server_information: "Mysql", platform: "Website", pm_url: "wwww.link.com", branch: 0)
 p = Project.last
-p.images.create
+i = p.images.create
 p.category_id = 1
+i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/projects/ExpressVPN.jpg')))
+p.images.each do |image|
+  image = i
+end
 p.save
 
 
 Project.create!(name: "CRB Android", url: "Inprogress", description: "Calendar system", core_features: "Ruby", realease_note: "Waiting update", git_repository: "https://github.com/framgia/fportfolio/", server_information: "Mysql", platform: "Website", pm_url: "wwww.link.com", branch: 0)
 p = Project.last
-p.images.create
+i = p.images.create
 p.category_id = 1
+i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/projects/ExpressVPN.jpg')))
+p.images.each do |image|
+  image = i
+end
 p.save
 
 
 Project.create!(name: "iMarket", url: "Inprogress", description: "Waiting update", core_features: "Ruby", realease_note: "Waiting update", git_repository: "https://github.com/framgia/fportfolio/", server_information: "Mysql", platform: "Website", pm_url: "wwww.link.com", branch: 0)
 p = Project.last
-p.images.create
+i = p.images.create
 p.category_id = 1
+i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/projects/ExpressVPN.jpg')))
+p.images.each do |image|
+  image = i
+end
 p.save
 
 
 Project.create!(name: "FCSP", url: "Inprogress", description: "Framgia Code School Platform", core_features: "Ruby", realease_note: "Waiting update", git_repository: "https://github.com/framgia/fportfolio/", server_information: "Mysql", platform: "Website", pm_url: "wwww.link.com", branch: 0)
 p = Project.last
-p.images.create
+i = p.images.create
 p.category_id = 1
+i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/projects/ExpressVPN.jpg')))
+p.images.each do |image|
+  image = i
+end
 p.save
 
 
-Project.create!(name: "FAsk", url: "Inprogress", description: "Online community for programmers to ask technical questions and share their knowledges", core_features: "Ruby", realease_note: "Waiting update", git_repository: "https://github.com/framgia/fportfolio/", server_information: "Mysql", platform: "Website", pm_url: "wwww.link.com", branch: 0)
+Project.create!(name: "ExpressVPN", url: "deloyed", description: "If you want to keep your Android device safe on sketchy public Wi-Fi, you’ll need a solid VPN, and ExpressVPN is one of the most trusted, secure brands in the virtual private network industry, and that’s for good reason. It’s super fast and extremely safe, boasting an SSL-secured network with 256-bit encryption and, get this, unlimited bandwidth and speed.", core_features: "Android", realease_note: "Waiting update", git_repository: "https://github.com/ExpressVPN/ExpressVPN1/", server_information: "Mysql", platform: "Website", pm_url: "wwww.link.com", branch: 0)
 p = Project.last
-p.images.create
+i = p.images.create
 p.category_id = 1
+i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/projects/ExpressVPN.jpg')))
+p.images.each do |image|
+  image = i
+end
 p.save

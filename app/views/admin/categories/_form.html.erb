@@ -1,15 +1,17 @@
-<div class="col-md-12">
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
-    <%= form_for [:admin, category] do |f| %>
-      <%= render "shared/error_messages",object: category %>
+<div class="row">
+  <div class="col-md-12">
+    <h2 class="add-category">Add category</h2>
+    <div class="col-md-3">
+      <%= form_for [:admin, category] do |f| %>
+        <%= render "shared/error_messages",object: category %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control" %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
 
-      </br>
-      <center><%= f.submit "Save", class: "add-account-button" %></center>
-    <% end %>
+        </br>
+        <%= f.submit "Save", class: "ui primary button add-category-button" %>
+      <% end %>
+    </div>
+    <div class="col-md-9"></div>
   </div>
-  <div class="col-md-3"></div>
 </div>

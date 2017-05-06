@@ -24,10 +24,10 @@
                       </li>
                       <li>
                         <%= link_to "", project_participates_path(I18n.locale, @project),
-                          class: "fa fa-plus-square", title: t("add_member_project") %>
+                          class: "fa fa-user-circle-o", title: t("add_member_project") %>
                       </li>
                       <li>
-                        <%= link_to "", "", class: "fa fa-trash-o", title: t("delete_project") %>
+                        <%= link_to "", new_project_path(I18n.locale), class: "fa fa-plus-square", title: t("delete_project") %>
                       </li>
                     </ul>
                   <% end %>

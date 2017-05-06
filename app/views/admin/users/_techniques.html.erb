@@ -1,18 +1,18 @@
-<table class="table table-condensed-<%= @category.id %>">
+<table class="ui inverted grey table table-condensed-<%= @category.id %>">
   <tbody>
   <% techniques.each do |technique| %>
     <tr id="techniques-<%= technique.id %>">
       <td id="technique-name-<%= technique.id %>"><label><%= technique.skill %></label></td>
       <td><%= link_to t(".edit"), "javascript:;", data: {id: technique.id},
-        class: "btn primary techniques-edit" %>
+        class: "btn btn-primary techniques-edit" %>
           <%= link_to t(".delete"), "javascript:;", data: {id: technique.id},
-        class: "btn danger techniques-delete" %>
+        class: "btn btn-danger techniques-delete" %>
         </td>
     </tr>
   <% end %>
     <tr>
        <td><%= link_to t(".hidden"), "javascript:;", data: {id: @category.id},
-        class: "btn info techniques-hidden" %></td>
+        class: "btn btn-info techniques-hidden" %></td>
     </tr>
   </tbody>
 </table>
@@ -20,7 +20,7 @@
   <tbody>
     <tr>
       <td><%= link_to t(".add"), "javascript:;", data: {id: @category.id},
-        class: "btn info techniques-add" %></td>
+        class: "btn btn-success techniques-add" %></td>
       <td><div id="add-technique-<%= @category.id %>"></div></td>
     </tr>
   </tbody>
