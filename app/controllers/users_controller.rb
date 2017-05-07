@@ -54,6 +54,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by id: params[:id]
+    @projects = @user.projects
     if @user
       @certificate_users = @user.certificate_users
       @techniques = @user.techniques

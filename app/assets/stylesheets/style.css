@@ -4,6 +4,10 @@ html, body {
   height: 100%;
 }
 
+.show-user {
+  margin-bottom: 30px;
+}
+
 .certification-user span{
   padding: 5px
 }

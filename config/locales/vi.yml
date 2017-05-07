@@ -42,8 +42,8 @@ vi:
   errors: "Lỗi"
   message: "Lời Nhắn"
   contact_us: "Liên hệ với chúng tôi"
-  contact_detail: "Được thành lập từ năm 2012 tại Hà Nội, Framgia Việt Nam là công ty IT Nhật Bản hoạt động trong lĩnh vực thiết kế, phát triển ứng dụng, games chạy trên nền tảng smartphone, nền tảng mạng xã hội, sản xuất và phát triển ứng dụng website."
-  contact_address: "6F, Vinh Trung Plaza, 255~257 Hung Vuong Str., Vinh Trung ward, Thanh Khe district, Da Nang"
+  contact_detail: "Được thành lập từ năm 2012 tại Hà Nội, Portfolio Việt Nam là công ty IT Nhật Bản hoạt động trong lĩnh vực thiết kế, phát triển ứng dụng, games chạy trên nền tảng smartphone, nền tảng mạng xã hội, sản xuất và phát triển ứng dụng website."
+  contact_address: "97 Nguyễn Lương Bằng, Hòa Khánh Bắc, Liên Chiểu, Đà Nẵng"
   contact_cofirmation: "Xác nhận liên hệ"
   send_message: "Gửi tin nhắn"
   dear: "Chào"
@@ -101,12 +101,12 @@ vi:
       about: "About |"
       faq: "Faq |"
       contact: "Liên hệ |"
-    company-name: "Copyright 2016 Framgia, Inc. All rights reserved."
+    company-name: "Copyright 2016 Portfolio, Inc. All rights reserved."
     address: "Tầng 6 tòa nhà Big C, Đà Nẵng, Việt Nam"
     phone: "84-4-3795-5417"
-    email: "hr_team@framgia.com"
-    introduce: "About Framgia Viet Nam"
-    description: "Framgia Việt Nam là công ty IT Nhật Bản hoạt động trong lĩnh
+    email: "hr_team@portfolio.com"
+    introduce: "About Portfolio Viet Nam"
+    description: "Portfolio Việt Nam là công ty IT Nhật Bản hoạt động trong lĩnh
     vực thiết kế, phát triển ứng dụng, games chạy trên nền tảng smartphone,
     nền tảng mạng xã hội, sản xuất và phát triển ứng dụng website."
     follow_us: "Theo dõi chúng tôi"
@@ -114,11 +114,11 @@ vi:
     error_messages:
       error: "lỗi"
   social:
-    facebook: "https://www.facebook.com/FramgiaVietnam"
-    github: "https://github.com/framgia/"
+    facebook: "https://www.facebook.com/PortfolioVietnam"
+    github: "https://github.com/portfolio/"
     link: "https://www.linkedin.com/company/3341218?trk=tyah&amp;
       trkInfo=clickedVertical%3Acompany%2CclickedEntityId%
-      3A3341218%2Cidx%3A2-1-2%2CtarId%3A1465497556522%2Ctas%3Aframgia%20vietnam"
+      3A3341218%2Cidx%3A2-1-2%2CtarId%3A1465497556522%2Ctas%3Aportfolio%20vietnam"
   images:
     create_failed: "Vui lòng chỉ chọn file ảnh"
   manage:
@@ -274,7 +274,7 @@ vi:
               blank: *blank
   sologan:
     first: "Đến với chúng tôi"
-    second: "Framgia"
+    second: "Portfolio"
   employee: "Nhân viên"
   complete_project: "Dự án hoàn thành"
   client: "Khách hàng"
@@ -282,10 +282,10 @@ vi:
   question:
     title: "ARE YOU READY TO"
     title_2: "MAKE IT AWESOME WITH US?"
-    description: "''Framgia'' không phải là từ dành riêng dùng để chỉ văn phòng nơi
+    description: "''Portfolio'' không phải là từ dành riêng dùng để chỉ văn phòng nơi
     các bạn làm việc, cũng không phải chỉ những quy định, thể chế , càng không phải
-    chỉ tư cách pháp nhân hay vốn điều lệ của công ty. ''Framgia'' chính là từ dùng để
-    chỉ từng cá nhân trong số các bạn, văn hóa của Framgia chính là do các bạn mà ra.
+    chỉ tư cách pháp nhân hay vốn điều lệ của công ty. ''Portfolio'' chính là từ dùng để
+    chỉ từng cá nhân trong số các bạn, văn hóa của Portfolio chính là do các bạn mà ra.
     Chúng ta hãy kết nối thật nhiều những người bạn đồng hành, cùng tạo ra thật nhiều
     giá trị ''awesome'' hơn nữa! "
   member: "Thành viên"

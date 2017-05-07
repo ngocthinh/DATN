@@ -1,4 +1,4 @@
-<div class="container margin-top-2">
+<div class="container margin-top-2 show-user">
   <div class="row margin-top-100">
     <div class="col-lg-3 col-md-4 col-sm-4 card margin-left-25">
       <div class="main-box clearfix">
@@ -126,8 +126,17 @@
 
   </div>
   <br />
+
+  <hr />
   <%= render "blogs/blogs_of_user", user: @user %>
+  <% if @projects.any? %>
   <div class="margin-bottom-50"></div>
+  <header class="main-box-header clearfix">
+      <h2><%= t "project_of_user" %></h2>
+  </header>
+  <br />
+  <hr />
+  <%= render "related_projects", projects: @projects %>
+  <div class="margin-bottom-50"></div>
+  <% end %>
 </div>
-
-

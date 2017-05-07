@@ -17,6 +17,8 @@ Category.create(name: "Embedded", target_type: 2)
 Category.create(name: "Game", target_type: 2)
 Category.create(name: "Multi Platform", target_type: 2)
 Category.create(name: "Other", target_type: 2)
+Category.create(name: "Technology", target_type: 0)
+Category.create(name: "Social life", target_type: 0)
 
 Technique.create(skill: "Ruby on Rails", category_id: 1)
 Technique.create(skill: "PHP", category_id: 1)
@@ -275,3 +277,57 @@ p = Project.last
 p.images.create image: File.open(File.join(Rails.root, '/public/uploads/default/projects/ExpressVPN.jpg'))
 p.category_id = 1
 p.save
+
+Post.create!(title: "Elon Musk muốn upload não bộ con người lên internet – ông sẽ phải đối mặt với khó khăn nào?", content: "Việc kết nối não bộ và máy tính sẽ là chìa khóa, là sự khẳng định rằng con người vượt trội hơn trí tuệ nhân tạo
+
+Dù bạn có tin hay không và đã sẵn sang hay chưa, thì máy tính và não bộ con người đã giao tiếp với nhau thường xuyên trong những phòng thí nghiệm công nghệ cao rồi. Không chỉ dừng lại ở đó bởi sau quá trình kết nối và tập luyện, mối liên kết máy móc – con người đang dần trở nên khăng khít hơn. Ví dụ cho những ứng dụng của liên kết này? Những người tàn tật hiện đã có thể di chuyển những chi robot của mình chỉ với sức mạnh của não bộ mình.
+Ta đang mơ tưởng tới một tương lai điều khiển xe cộ (thậm chí là cả tàu vũ trụ?) chỉ bằng suy nghĩ của mình, tải não của ta lên một hệ thống máy tính mạnh mẽ xứng tầm với khả năng con người và cuối cùng, tạo ra một người-lai-robot hoàn thiện – một cyborg.
+
+Và bạn biết gì không, Elon Musk đã chính thức đặt chân vào cuộc đua tới tương lai này. CEO của Tesla và SpaceX vừa mới xây dựng thêm Neuralink – một công ty nhắm tới mục tiêu liên kết trí óc con người và máy tính. Musk có thể phát triển xe tự lái, tên lửa tái chế nhưng liệu, cái ước mơ xa vời của kết hợp não bộ và máy tính có thực hiện được?
+
+Công nghệ thần kinh lần đầu tiên được đưa ra bởi Jaques Vidal vào hồi những năm 1970, ông nêu lên ý tưởng về việc ghi điện não – việc theo dõi và ghi lại song não thông qua những cảm biến được đặt trên da đầu của con người – có thể được sử dụng để tạo nên những hệ thống cho phép con người điều khiển những vật thể, những thiết bị khác.", target_type: 0)
+p = Post.last
+p.category_id = 7
+p.user_id = 1
+p.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/posts/ElonMusk.jpg')))
+p.save
+
+Post.create!(title: "[JAVA] Giải pháp khi gặp java.lang.OutOfMemoryError", content: "Mọi lập trình viên java đều phải đối mặt với java.lang.OutOfMemoryError và nó là một vấn đề về giới hạn của hệ thống ( bộ nhớ ) hơn là lỗi lập trình trong một số trường hợp. Tuy nhiên trong một số trường hợp với memory leak cũng gây ra java.lang.OutOfMemoryError .Tôi nhận ra rằng mặc dù java.lang.OutOfMemoryError là kiến thức khá cơ bản về nguyên nhân và giải pháp, nhưng phần lớn các lập trình viên không biết rõ nó. Cuốn sách cơ bản cho người mới như Head First Java không hướng dẫn cho bạn cách xử lí với những lỗi như này. Bạn cần một kinh nghiệm thực tế xử lí với các hệ thống sản xuất, giải quyết một số lượng lớn phiên người dùng để khắc phục sự cố về hiệu năng như không đủ bộ nhớ
+
+Nếu bạn muốn tốt hơn trong xử lí sự cố và phân tích hiệu năng, bạn cần phải đọc vài cuốn sách về Java hiệu năng và profiling như Java Performance The definitive Guide của Scott Oaks hoặc Java Performance của Binu John. Họ không những là cảm hứng tuyệt vời cho lập trình viên Java senior mà còn chỉ bạn công cụ và phương pháp khi gặp những lỗi như java.lang.OutOfMemoryError.
+
+
+Trong bài viết này, chúng tôi sẽ tìm hiểu java.lang.OutOfMemoryError là gì ? Tại sao OutOfMemoryError lại xảy ra với ứng dụng Java? sự khác nhau giữa OutOfMemoryError và Làm thế nào để khắc phục OutOfMemoryError  trong Java. Bài viết còn cung cấp kiến thức cơ bản về  java.lang.OutOfMemoryError và chúng tôi sẽ không bàn luận chi tiết về profiling. Về profiling hãy đọc những cuốn sách đã được tối nhắc ở trên.", target_type: 0)
+p = Post.last
+p.category_id = 7
+p.user_id = 1
+p.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/posts/understanding-jvm.jpg')))
+p.save
+
+Post.create!(title: "Giới thiệu các Storage Engine trong MySQL", content: "InnoDB
+
+Đây là Storage Engine mặc định trong MySQL 5.7. InnoDB là một Storage Engine transaction-safe (tuân thủ ACID) cho MySQL có các commit, rollback và khả năng khôi phục lỗi để bảo vệ dữ liệu người dùng. Row-level locking của InnoDB và kiểu nonlocking read của Oracle-style làm tăng sự đồng thời và hiệu suất của nhiều người dùng. InnoDB lưu trữ dữ liệu người dùng trong các clustered indexes để giảm I/O cho các truy vấn thông thường dựa trên các primary key. Để duy trì tính toàn vẹn của dữ liệu, InnoDB cũng hỗ trợ các ràng buộc toàn vẹn Foreign Key.
+
+MyISAM
+
+Table-level locking giới hạn hiệu suất read/write dữ liệu, vì vậy nó thường được sử dụng cho các công việc read-only hoặc read-mostly trong các cấu hình Web và lưu trữ dữ liệu.
+Memory
+
+Lưu trữ tất cả dữ liệu trong RAM, để truy cập nhanh trong các môi trường đòi hỏi tra cứu nhanh các dữ liệu không quan trọng. Engine này trước đây gọi là HEAP Engine. Storage Engine này đang sử dụng ít dần, do InnoDB với vùng bộ đệm cung cấp một cách mục đích chung và bền để giữ hầu hết hoặc tất cả dữ liệu trong memory, và NDBCLUSTER cung cấp tra cứu giá trị quan trọng nhanh cho các bộ dữ liệu phân tán lớn.
+
+CSV
+
+Các bảng của nó thực sự là các tập tin văn bản với các giá trị được phân cách bởi dấu phẩy. Các bảng CSV cho phép bạn nhập hoặc đổ dữ liệu ở định dạng CSV, để trao đổi dữ liệu với các tập lệnh và ứng dụng đọc và ghi cùng một định dạng. Vì bảng CSV không được lập chỉ mục, bạn thường giữ dữ liệu trong các bảng InnoDB trong quá trình hoạt động bình thường và chỉ sử dụng các bảng CSV trong giai đoạn nhập hoặc xuất.
+
+Archive
+
+Các bảng nhỏ gọn, không biểu hiện này được dùng để lưu trữ và truy xuất số lượng lớn các thông tin kiểm tra lịch sử, lưu trữ, hoặc kiểm tra an toàn.", target_type: 0)
+p = Post.last
+p.category_id = 8
+p.user_id = 1
+p.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/posts/mysql.png')))
+p.save
+
+3.times do |e|
+  Participate.create!(user_id: 1, project_id: "#{25-e}", is_accept: true, position: "div")
+end
