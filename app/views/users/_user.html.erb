@@ -1,5 +1,9 @@
 <div class="card custom-card" id="user-<%= user.id %>">
   <div class="image">
+  <p></p>
+  <center><%= link_to t(".add") +user.name+ t(".to")+ @project.name, "#",class: "user-index-avatar",
+      data: {toggle: "modal", target: "#user_modal#{user.id}"}  %></center>
+    <p></p>
     <%= image_tag user.avatar.url, class: "user-index-avatar",
       data: {toggle: "modal", target: "#user_modal#{user.id}"} %>
   </div>

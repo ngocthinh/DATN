@@ -177,9 +177,14 @@ vi:
     edit:
       save: "Xác nhận lưu"
       cancel: "Hủy bỏ"
+    user:
+      add: "Thêm "
+      to: " vào dự án "
   participates:
     created: "Thêm thành viên thành công."
     create_failed: "Thêm thành viên thất bại ."
+    index:
+      done: "Hoàn thành"
   helper:
     placeholder:
       project:

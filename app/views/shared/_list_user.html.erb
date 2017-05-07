@@ -9,7 +9,7 @@
         </div>
         <%= f.submit (t "search_button"), class: "ui blue button" %>
       <% end %>
-      <div class="ui link cards" id= "users-<%= @project.id %>">
+  <div class="ui link cards" id= "users-<%= @project.id %>">
     <% else %>
       <%= search_form_for @q, id: "search_form" do |f| %>
         <div class="ui input icon search-form">

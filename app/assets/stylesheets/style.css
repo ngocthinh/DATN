@@ -403,6 +403,14 @@ img.raty-cancel {
   transition-duration: 0.8s;
 }
 
+.show-project {
+  padding-left: 45px;
+}
+
+.comment-content-form {
+  width: 80% !important;
+}
+
 .isotope {
   -webkit-transition-property: height, width;
   -moz-transition-property: height, width;
@@ -416,7 +424,7 @@ img.raty-cancel {
 }
 
 #our-works {
-  padding-bottom: 120px;
+  padding-bottom: 30px;
 }
 
 .portfolio-wrapper ul.filter {

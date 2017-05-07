@@ -18,14 +18,17 @@
                 <div class="iconswrapper">
                   <% if user_signed_in? %>
                     <ul>
+                    <% if (current_user.has_role? :admin)||(@project.users.include? current_user) %>
                       <li>
                         <%= link_to "", edit_project_path(I18n.locale, @project),
                           class: "fa fa-pencil-square-o", title: t("edit_project") %>
                       </li>
+
                       <li>
                         <%= link_to "", project_participates_path(I18n.locale, @project),
                           class: "fa fa-user-circle-o", title: t("add_member_project") %>
                       </li>
+                      <% end %>
                       <li>
                         <%= link_to "", new_project_path(I18n.locale), class: "fa fa-plus-square", title: t("delete_project") %>
                       </li>
@@ -162,24 +165,20 @@
     </div>
     <div class="row margin-bottom-50">
       <div class="nav-tabs-custom">
-        <ul class="nav nav-tabs">
-          <li class="active">
-            <%= link_to t("member_of_project") , "#member_of_project", data: {toggle: "tab"} %>
-          </li>
-          <li class="">
-            <%= link_to t("comments"), "#comment", data: {toggle: "tab"} %>
-          </li>
-        </ul>
-        <div class="tab-content">
+        <div class="content show-project">
+        <div class="ui orange ribbon label"><i class="fa fa-users" aria-hidden="true"></i> User of project </div>
           <div class="tab-pane active" id="member_of_project">
             <div class="row margin-bottom-50">
               <%= render "member_of_project", object: @project.users %>
             </div>
           </div>
-          <div class="tab-pane" id="comment">
+          <div class="pane" id="comment">
+          <div class="ui blue ribbon label"><i class="fa fa-commenting" aria-hidden="true"></i> comments </div>
             <div class="row margin-bottom-50">
               </br>
+              <% if user_signed_in? %>
               <%= render partial: "comments/comment_form", locals: {project: @project}%>
+              <% end %>
             </div>
             <div class="entries" id="entries">
             <%= render @comments %>

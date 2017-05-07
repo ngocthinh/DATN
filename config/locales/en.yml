@@ -153,9 +153,14 @@ en:
       cancel: "Cancel"
     form:
       save: "save"
+    user:
+      add: "Add "
+      to: " to project "
   participates:
     created: "Member was successfully added."
     create_failed: "Member was add failed "
+    index:
+      done: "Done"
   helpers:
     placeholder:
       project:
@@ -226,14 +231,9 @@ en:
   client: "Clients"
   cup_of_coffee: "Cups of Coffee"
   question:
-    title_1: "ARE YOU READY TO"
-    title_2: "MAKE IT AWESOME WITH US?"
-    description: "''Framgia'' is not a reserved word used to refer to the office where
-    you work, nor only those provisions, institutions, and especially not
-    only legal status or the company's charter capital. '' Framgia '' is the term used to
-    only individual among you, culture is due to your Framgia that out.
-    Let's connect a lot of fellow, and create lots
-    value ''awesome''. More! "
+    title_1: "Why should I have a portfolio?"
+    title_2: "What should be included in my portfolio?"
+    description: "The process of putting together a portfolio itself will help you become a more effective interviewee. You will be identifying the skills you have gained through your various experiences and how they relate to the career you are interested in. Choosing the most relevant experiences and putting them in an easily understood format will help you better articulate your skills and experiences when asked questions about your qualifications in an interview. A professional portfolio will also show an employer proof of your organizational, communication, and tangible career related skills."
   member: "Member"
   in: "In"
   by: "By"
