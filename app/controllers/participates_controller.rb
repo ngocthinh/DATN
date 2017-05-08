@@ -2,9 +2,10 @@ class ParticipatesController < ApplicationController
   before_action :authenticate_user!
   before_action :load_project, only: [:create, :index, :destroy]
   before_action :load_participate, only: [:destroy, :show]
+
   def index
-    @t = User.member_not_in_project(@project.participates.pluck :user_id).ransack params[:t]
-    @users = @t.result.page(params[:page]).per Settings.per_page.user
+    @q = User.member_not_in_project(@project.participates.pluck :user_id).ransack params[:q]
+    @users = @q.result.page(params[:page]).per Settings.per_page.user
     @participates = @project.participates
   end
 
