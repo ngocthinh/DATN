@@ -40,8 +40,8 @@ en:
   errors: "Errors"
   message: "Message"
   contact_us: "Contact us"
-  contact_detail: "Since our foundation in 2012, we have been combining innovation and global experience from various countries such as Vietnam, Bangladesh, Cambodia, Nigeria, Kazakhstan, Japan, etc."
-  contact_address: "6F, Vinh Trung Plaza, 255~257 Hung Vuong Str., Vinh Trung ward, Thanh Khe district, Da Nang"
+  contact_detail: "Since our foundation in 2012, we have been combining innovation and global experience from various countries such as Vietnam, etc."
+  contact_address: "97 Nguyen Luong Bang Str., Hoa Khanh Bac district, Da Nang"
   contact_cofirmation: "Contact cofirmation"
   send_message: "Send the message"
   dear: "Dear"
@@ -79,12 +79,12 @@ en:
       about: "About |"
       faq: "Faq |"
       contact: "Contact |"
-    company-name: "Copyright 2016 Framgia, Inc. All rights reserved."
+    company-name: "Copyright 2016 Portfolio, Inc. All rights reserved."
     address: "6F Big C Tower, Da Nang, Viet Nam"
     phone: "84-4-3795-5417"
-    email: "hr_team@framgia.com"
-    introduce: "About Framgia Viet Nam"
-    description: "Framgia Vietnam is a company 100% Japan funded specializing
+    email: "hr_team@portfolio.com"
+    introduce: "About Portfolio Viet Nam"
+    description: "Portfolio Vietnam is a company 100% Japan funded specializing
     in design, development applications such as mobile phone software, games,
     social and website applications."
     follow_us: "Follow us"
@@ -92,11 +92,11 @@ en:
     error_messages:
       error: "error"
   social:
-    facebook: "https://www.facebook.com/FramgiaVietnam"
-    github: "https://github.com/framgia/"
+    facebook: "https://www.facebook.com/PortfolioVietnam"
+    github: "https://github.com/portfolio/"
     link: "https://www.linkedin.com/company/3341218?trk=tyah&amp;
       trkInfo=clickedVertical%3Acompany%2CclickedEntityId%
-      3A3341218%2Cidx%3A2-1-2%2CtarId%3A1465497556522%2Ctas%3Aframgia%20vietnam"
+      3A3341218%2Cidx%3A2-1-2%2CtarId%3A1465497556522%2Ctas%3Aportfolio%20vietnam"
   images:
     create_failed: "File apply only image"
   manage:
@@ -132,6 +132,8 @@ en:
       search_project: "Search Projects"
       placeholder: "Search Projects"
       all: "All"
+    edit:
+      save: "Save"
   users:
     label_position: "Position of him/her for your project:"
     about_you: "More about him/her"
@@ -153,9 +155,14 @@ en:
       cancel: "Cancel"
     form:
       save: "save"
+    user:
+      add: "Add "
+      to: " to project "
   participates:
     created: "Member was successfully added."
     create_failed: "Member was add failed "
+    index:
+      done: "Done"
   helpers:
     placeholder:
       project:
@@ -171,7 +178,7 @@ en:
       messages:
         content: "Type your messages here"
   introduce:
-    portfolio: "Framgia Company has great opportunities to support amazing
+    portfolio: "Portfolio Company has great opportunities to support amazing
       companies that are creating great values in their industries. Our active
       portfolio represents outstanding projects we have done. We always focus on
       continuous improvement, scope flexibility, team input, and delivering
@@ -226,14 +233,9 @@ en:
   client: "Clients"
   cup_of_coffee: "Cups of Coffee"
   question:
-    title_1: "ARE YOU READY TO"
-    title_2: "MAKE IT AWESOME WITH US?"
-    description: "''Framgia'' is not a reserved word used to refer to the office where
-    you work, nor only those provisions, institutions, and especially not
-    only legal status or the company's charter capital. '' Framgia '' is the term used to
-    only individual among you, culture is due to your Framgia that out.
-    Let's connect a lot of fellow, and create lots
-    value ''awesome''. More! "
+    title_1: "Why should I have a portfolio?"
+    title_2: "What should be included in my portfolio?"
+    description: "The process of putting together a portfolio itself will help you become a more effective interviewee. You will be identifying the skills you have gained through your various experiences and how they relate to the career you are interested in. Choosing the most relevant experiences and putting them in an easily understood format will help you better articulate your skills and experiences when asked questions about your qualifications in an interview. A professional portfolio will also show an employer proof of your organizational, communication, and tangible career related skills."
   member: "Member"
   in: "In"
   by: "By"

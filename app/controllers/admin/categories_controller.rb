@@ -18,7 +18,7 @@ class Admin::CategoriesController < Admin::AdminController
   end
 
   def index
-    @categories = Category.project.page(params[:page]).per Settings.per_page.admin_user
+    @categories = Category.project.page(params[:page]).per 5
   end
 
   def update

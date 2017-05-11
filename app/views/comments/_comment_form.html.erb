@@ -6,7 +6,7 @@
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.hidden_field :name, value: current_user.name %>
       </br>
-      <%= f.text_area :content, placeholder: t("comment_content"), class: "form-control",
+      <%= f.text_area :content, placeholder: t("comment_content"), class: "form-control comment-content-form",
         id: "content"%>
       <%= f.hidden_field :project_id, value: @project.id %>
     </div>

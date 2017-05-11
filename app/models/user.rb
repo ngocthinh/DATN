@@ -31,9 +31,14 @@ class User < ApplicationRecord
   scope :order_by_newest, ->{order created_at: :desc}
   scope :member_not_in_project, lambda { |ids| where(["id NOT IN (?)", ids]) if ids.any? }
 
+
   ratyrate_rateable :rating
 
   ratyrate_rater
+
+  def self.show_for_rating
+    User.all.sort_by {|u| [u.average(:rating) ? u.average(:rating).avg : 0, u.average(:rating)]}.reverse
+  end
 
   def self.from_omniauth auth
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

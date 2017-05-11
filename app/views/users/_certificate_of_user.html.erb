@@ -12,8 +12,10 @@
                 <%= image_tag certificate_user.certification.image.url, class: "img-certificate" %>
               </div>
               <div class="details detail-profile">
-                <div class="name height-30">
-                  <%= link_to certificate_user.certification.name, "" %>
+                <div class="name height-30 certification-user" title="<%= certificate_user.certification.description %>">
+                  <span class="label label-primary">
+                    <%= certificate_user.certification.name %>
+                  </span>
                 </div>
                 <div class="time online">
                   <i class="fa fa-check-circle"></i> <%= t "certification" %>

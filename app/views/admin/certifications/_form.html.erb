@@ -1,18 +1,19 @@
 <div class="col-md-12">
-  <div class="col-md-3"></div>
+  <h2 class="add-category">edit certification</h2>
   <div class="col-md-6">
-    <%= form_for [I18n.locale,:admin, certification], url: admin_certification_path, remote: :true do |f| %>
+    <%= form_for [:admin, certification], url: admin_certification_path do |f| %>
       <%= render "shared/error_messages",object: certification %>
 
       <%= f.label :name %>
       <%= f.text_field :name, class: "form-control" %>
 
       <%= f.label :description %>
-      <%= f.text_field :description, class: "form-control" %>
-
+      <%= f.text_area :description, class: "form-control" %>
       </br>
-      <center><%= f.submit "Save", class: "add-certification-button" %></center>
+      <%= f.file_field :image %>
+      </br>
+      <%= f.submit "Save", class: "add-category-button" %>
     <% end %>
   </div>
-  <div class="col-md-3"></div>
+  <div class="col-md-6"></div>
 </div>

@@ -105,69 +105,42 @@
         <div class="st-introduce-teams">
           <div id="fade-quote-carousel" class="carousel slide owl-wrapper" data-ride="carousel" data-interval="3000">
             <ol class="carousel-indicators">
-              <li data-target="#fade-quote-carousel" data-slide-to="0"></li>
-              <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
-              <li data-target="#fade-quote-carousel" data-slide-to="2" class="active"></li>
-              <li data-target="#fade-quote-carousel" data-slide-to="3"></li>
-              <li data-target="#fade-quote-carousel" data-slide-to="4"></li>
+              <li data-target="#fade-quote-carousel" data-slide-to="0" class = "active"></li>
+              <% @users.each do |user| %>
+                <li data-target="#fade-quote-carousel" data-slide-to="<%= user.id+1 %>"></li>
+              <% end %>
             </ol>
             <div class="carousel-inner">
               <div class="active item">
-                <div class="profile-circle left member1"></div>
+              <%= image_tag @users.first.avatar.url, class: "profile-circle left member1" %>
                 <blockquote>
-                  <p><%= t "list_team.speak1" %></p>
+                  <p><%= @users.first.biography %></p>
                 <div class="st-border"></div>
+                <h5><%= @users.first.name %></h5>
                 <div class="client-info">
-                  <h5><%= t "list_team.member1" %></h5>
-                  <span><%= t "position.manage" %></span>
+                  <span><% @users.first.techniques.each do |technique| %>
+                     -<%= technique. skill %> -
+                    <% end %>
+                  </span>
                 </div>
                 </blockquote>
                 <div class="clear"></div>
               </div>
-              <div class="item">
-                <div class="profile-circle left member2"></div>
-                <blockquote>
-                  <p><%= t "list_team.speak1" %></p>
-                <div class="st-border"></div>
-                <div class="client-info">
-                  <h5><%= t "list_team.member2" %></h5>
-                  <span><%= t "position.manage" %></span>
+              <% @users[1..-1].each do |user| %>
+                <div class="item">
+                  <%= image_tag user.avatar.url, class: "profile-circle left member1" %>
+                  <blockquote>
+                    <p><%= user.biography %></p>
+                  <div class="st-border"></div>
+                    <h5><%= user.name %></h5>
+                  <div class="client-info text-center">
+                    <span><% user.techniques.each do |technique| %>
+                     -<%= technique. skill %>-
+                    <% end %></span>
+                  </div>
+                  </blockquote>
                 </div>
-                </blockquote>
-              </div>
-              <div class="item">
-                <div class="profile-circle left member2"></div>
-                <blockquote>
-                  <p><%= t "list_team.speak1" %></p>
-                <div class="st-border"></div>
-                <div class="client-info">
-                  <h5><%= t "list_team.member3" %></h5>
-                  <span><%= t "position.dev" %></span>
-                </div>
-                </blockquote>
-              </div>
-              <div class="item">
-                <div class="profile-circle left member2"></div>
-                <blockquote>
-                  <p><%= t "list_team.speak1" %></p>
-                <div class="st-border"></div>
-                <div class="client-info">
-                  <h5><%= t "list_team.member4" %></h5>
-                  <span><%= t "position.dev" %></span>
-                </div>
-                </blockquote>
-              </div>
-              <div class="item">
-                <div class="profile-circle left member2"></div>
-                <blockquote>
-                  <p><%= t "list_team.speak1" %></p>
-                <div class="st-border"></div>
-                <div class="client-info">
-                  <h5><%= t "list_team.member5" %></h5>
-                  <span><%= t "position.dev" %></span>
-                </div>
-                </blockquote>
-              </div>
+              <% end %>
             </div>
           </div>
       </div>

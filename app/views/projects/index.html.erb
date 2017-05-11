@@ -9,11 +9,18 @@
       </div>
     </div>
     <hr />
-    <div class="search-projects">
-    <%= search_form_for @q, url: projects_path do |f| %>
-    <%= f.search_field :name_cont,
-      placeholder: t(".placeholder"), class: "form-control" %>
-    <% end %>
+    <div class="ui input focus">
+      <div class="col-lg-6 text-center">
+        <%= search_form_for @q, url: projects_path do |f| %>
+          <%= f.search_field :name_cont,
+            placeholder: t(".placeholder"), class: "ui input form-search-project" %>
+        <% end %>
+      </div>
+      <div class="col-lg-6">
+       <%= select_tag :category_id, options_for_select(Category.project.map {|project| [project.name, project.id] }.insert(0, nil), :include_blank => true),
+         class: "ui search dropdown category-project" %>
+         <i class="search icon"></i>
+      </div>
     </div>
     <hr />
     <br />

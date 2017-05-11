@@ -12,8 +12,8 @@ $(document).ready(function() {
     function(){
       markers = handler.addMarkers([
         {
-          "lat": 16.066733,
-          "lng": 108.213475,
+          "lat": 16.0738774,
+          "lng": 108.1475563,
           "picture": {
             "width":  32,
             "height": 32

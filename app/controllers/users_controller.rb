@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @q = User.ransack params[:q]
-    @users = @q.result.page(params[:page]).per Settings.per_page.user
+    @users = Kaminari.paginate_array(@q.result.show_for_rating).page(params[:page]).per Settings.per_page.user
     respond_to do |format|
       format.html
       format.js
@@ -27,7 +27,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @categories = Category.project
     respond_to do |format|
       format.html
       format.js do
@@ -55,6 +54,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by id: params[:id]
+    @projects = @user.projects
     if @user
       @certificate_users = @user.certificate_users
       @techniques = @user.techniques

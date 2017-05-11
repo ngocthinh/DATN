@@ -6,7 +6,7 @@
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home"><%= t "member" %></a></li>
     <li><a data-toggle="tab" href="#menu2"><%= t "member_of_project" %></a></li>
-    <%= link_to "Hoàn Thành", project_path(I18n.locale, @project), class: "btn btn-success" %>
+    <%= link_to t(".done"), project_path(I18n.locale, @project), class: "btn btn-success" %>
   </ul>
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">

@@ -32,3 +32,4 @@
 //= require_tree ./channels
 //= require simplemde.min
 //= require chosen-jquery
+//= require chartkick

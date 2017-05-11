@@ -1,7 +1,7 @@
-<div class="container ">
+<div class="container project-index">
   <% if @users.present? %>
     <% if @project %>
-      <%= search_form_for @t, url: project_participates_path(I18n.locale, @project),
+      <%= search_form_for @q, url: project_participates_path(I18n.locale, @project),
        id: "search_form", class: " margin-top-null" do |f| %>
         <div class="ui input icon search-form">
           <%= f.search_field :name_or_email_cont, placeholder: "Find by name or email",
@@ -9,7 +9,7 @@
         </div>
         <%= f.submit (t "search_button"), class: "ui blue button" %>
       <% end %>
-      <div class="ui link cards" id= "users-<%= @project.id %>">
+  <div class="ui link cards" id= "users-<%= @project.id %>">
     <% else %>
       <%= search_form_for @q, id: "search_form" do |f| %>
         <div class="ui input icon search-form">
@@ -28,6 +28,24 @@
         class: "btn btn-primary" %>
     </center>
   <% else %>
-    <p><%= t ".no_user_found" %> <%= params[:search] %>.</p>
+  <% if @project %>
+      <%= search_form_for @q, url: project_participates_path(I18n.locale, @project),
+       id: "search_form", class: " margin-top-null" do |f| %>
+        <div class="ui input icon search-form">
+          <%= f.search_field :name_or_email_cont, placeholder: "Find by name or email",
+            id: "user_search" %>
+        </div>
+        <%= f.submit (t "search_button"), class: "ui blue button" %>
+      <% end %>
+      <% else %>
+    <%= search_form_for @q, id: "search_form" do |f| %>
+      <div class="ui input icon search-form">
+        <%= f.search_field :name_or_email_cont, placeholder: "Find by name or email",
+          id: "user_search" %>
+      </div>
+      <%= f.submit (t "search_button"), class: "ui blue button" %>
+    <% end %>
+    <p><%= t ".no_user_found" %> <%= params[:q][:name_or_email_cont] %>.</p>
+    <% end %>
   <% end %>
 </div>

@@ -40,6 +40,9 @@ gem "redis", "~> 3.2"
 gem "pygments.rb", "~> 0.6.3"
 gem "redcarpet", "~> 3.3", ">= 3.3.4"
 gem "simplemde-rails"
+gem "chartkick"
+gem 'groupdate'
+gem 'active_median', '~> 0.1.0'
 
 group :development, :test do
   gem "pry-rails"

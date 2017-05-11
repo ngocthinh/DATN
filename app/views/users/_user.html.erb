@@ -1,5 +1,11 @@
 <div class="card custom-card" id="user-<%= user.id %>">
   <div class="image">
+  <p></p>
+  <% unless @project.nil? %>
+  <center><%= link_to t(".add") +user.name+ t(".to")+ @project.name, "#",class: "user-index-avatar",
+      data: {toggle: "modal", target: "#user_modal#{user.id}"}  %></center>
+    <p></p>
+    <% end %>
     <%= image_tag user.avatar.url, class: "user-index-avatar",
       data: {toggle: "modal", target: "#user_modal#{user.id}"} %>
   </div>
@@ -16,6 +22,9 @@
       <div class="description">
         <%= user.biography.truncate(Settings.truncate.biography) %>
       </div>
+      <div class="disable-cancel center">
+                <%= rating_for user, :rating, disable_after_rate: false, enable_half: true, cancel: false %>
+              </div>
     <% end %>
   </div>
   <div class="extra content">
@@ -42,11 +51,9 @@
           <%= image_tag user.avatar.url, class: "image-modal img-circle" %>
           <h1 class="media-heading"><%= user.name %></h1>
           <h2 class="media-heading"><%= user.position %></h2>
-          <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
-          <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
-          <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
-          <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
-          <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+          <div class="disable-cancel">
+                <%= rating_for user, :rating, disable_after_rate: false, enable_half: true, cancel: false %>
+              </div>
         </center>
         <div class="row clearfix">
           <div class="table-responsive">

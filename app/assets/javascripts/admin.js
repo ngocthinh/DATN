@@ -97,7 +97,7 @@ $(document).ready(function() {
        required="required" data-id="${category_id}" data-name="${category_name}"
        type="text" >
        <br>
-       <button type="button" class="btn edit-category-user" value ="${category_id}">save</button>
+       <button type="button" class="ui inverted green button edit-category-user" value ="${category_id}">save</button>
      `);
   });
 
@@ -110,7 +110,7 @@ $(document).ready(function() {
        required="required" data-id="${technique_id}" data-name="${technique_name}"
        type="text" >
        <br>
-       <button type="button" class="btn edit-technique-user" value ="${technique_id}">save</button>
+       <button type="button" class="ui inverted green button edit-technique-user" value ="${technique_id}">save</button>
      `);
   });
 
@@ -119,7 +119,7 @@ $(document).ready(function() {
     $('#add-technique-' + category_id).html(`
        <input class="form-control input-new-technique-${category_id}">
        <br>
-       <button type="button" class="btn button-new-technique" value ="${category_id}">save</button>
+       <button type="button" class="ui inverted green button button-new-technique" value ="${category_id}">save</button>
      `);
 
   });
