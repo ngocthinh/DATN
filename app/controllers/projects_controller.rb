@@ -4,13 +4,18 @@ class ProjectsController < ApplicationController
   load_and_authorize_resource
 
   def new
-    @categories = Category.all
+    @categories = Category.project
     @project = Project.new
     @project.images.build
   end
 
   def index
-    @q = Project.ransack params[:q]
+    # binding.pry
+    if params[:category_id].present?
+      @q = Project.get_follow_category(params[:category_id]).ransack(params[:q])
+    else
+      @q = Project.ransack(params[:q])
+    end
     @projects = Kaminari.paginate_array(@q.result.show_for_rating)
       .page(params[:page]).per(Settings.per_page.projects)
     @categories = Category.all

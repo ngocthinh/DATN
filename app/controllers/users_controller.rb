@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @q = User.ransack params[:q]
-    @users = @q.result.page(params[:page]).per Settings.per_page.user
+    @users = Kaminari.paginate_array(@q.result.show_for_rating).page(params[:page]).per Settings.per_page.user
     respond_to do |format|
       format.html
       format.js

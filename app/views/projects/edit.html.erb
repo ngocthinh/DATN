@@ -61,8 +61,9 @@
                 <div class="col-md-6">
                   <p class="text-left">
                   <b> <%= t "platform" %>: </b><br />
-                    <%= f.text_field :platform, class: "form-control input-md",
-                      required: true %>
+                  <%= f.select :category_id, options_for_select(Category.project.map{|c| [c.name, c.id]},
+                    f.object.category_id), {},
+                    {class: "form-control selectpicker", "data-live-search": true} %>
                   </p>
                 </div>
                 <div class="col-md-6">
@@ -91,6 +92,7 @@
                   </div>
                 </div>
               </div>
+              <hr>
               <div class="col-md-6">
                 <div class="button-edit">
                   <%= f.submit t(".save"), class: "btn btn-success" %>

@@ -139,12 +139,15 @@
     <div class="row margin-bottom-50">
       <div class="nav-tabs-custom">
         <div class="content show-project">
-        <div class="ui orange ribbon label"><i class="fa fa-users" aria-hidden="true"></i> User of project </div>
+        <div>
+          <div class="ui teal tag label"><h3><i class="fa fa-users" aria-hidden="true">User of project</i></h3></div>
           <div class="tab-pane active" id="member_of_project">
             <div class="row margin-bottom-50">
               <%= render "member_of_project", object: @project.users %>
             </div>
           </div>
+        </div>
+          <hr>
           <div class="pane" id="comment">
           <div class="ui blue ribbon label"><i class="fa fa-commenting" aria-hidden="true"></i> comments </div>
             <div class="row margin-bottom-50">

@@ -13,7 +13,7 @@ html, body {
 }
 
 .search-projects {
-  width: 20%;
+  width: 40%;
 }
 
 .project-index {
@@ -405,6 +405,12 @@ img.raty-cancel {
   -webkit-transition-duration: 0.8s;
   -moz-transition-duration: 0.8s;
   transition-duration: 0.8s;
+}
+
+.user-project {
+  background-color: gainsboro;
+  margin-left: 15px;
+  margin-top: 15px;
 }
 
 .show-project {

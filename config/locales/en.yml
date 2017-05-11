@@ -132,6 +132,8 @@ en:
       search_project: "Search Projects"
       placeholder: "Search Projects"
       all: "All"
+    edit:
+      save: "Save"
   users:
     label_position: "Position of him/her for your project:"
     about_you: "More about him/her"

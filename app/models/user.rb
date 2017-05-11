@@ -36,6 +36,10 @@ class User < ApplicationRecord
 
   ratyrate_rater
 
+  def self.show_for_rating
+    User.all.sort_by {|u| [u.average(:rating) ? u.average(:rating).avg : 0, u.average(:rating)]}.reverse
+  end
+
   def self.from_omniauth auth
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider

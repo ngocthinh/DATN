@@ -47,6 +47,10 @@ class Project < ApplicationRecord
     end
   end
 
+  def self.get_follow_category category_id
+    where(category_id: category_id) unless category_id.nil?
+  end
+
   def self.show_for_rating
     Project.all.sort_by {|u| [u.average(:rating) ? u.average(:rating).avg : 0, u.average(:rating)]}.reverse
   end
