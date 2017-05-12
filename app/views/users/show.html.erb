@@ -12,7 +12,7 @@
           <div class="profile-stars center">
             <%= rating_for @user, :rating, disable_after_rate: false, enable_half: true, cancel: false %>
             <div class="ui red pointing label">
-              <%= @user.average(:rating).avg %>
+              <%= @user.average(:rating).try(:avg) %>
             </div>
           </div>
           <div class="profile-since center">
