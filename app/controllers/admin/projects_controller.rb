@@ -1,6 +1,6 @@
 class Admin::ProjectsController < Admin::AdminController
   before_action :authenticate_user!, except: [:show, :index]
-  before_action :load_project, only: [:edit, :update]
+  before_action :load_project, only: [:edit, :update, :destroy]
   load_and_authorize_resource
 
   def new
@@ -12,7 +12,7 @@ class Admin::ProjectsController < Admin::AdminController
   def index
     @q = Project.ransack params[:q]
     @projects = Kaminari.paginate_array(@q.result.show_for_rating)
-      .page(params[:page]).per(Settings.per_page.projects)
+      .page(params[:page]).per(4)
     @categories = Category.all
   end
 
@@ -57,7 +57,14 @@ class Admin::ProjectsController < Admin::AdminController
     else
       render :edit
     end
+  end
 
+  def destroy
+    if @project.destroy
+      redirect_to admin_projects_path
+    else
+      redirect_to :back
+    end
   end
 
   private

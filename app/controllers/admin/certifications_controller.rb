@@ -17,7 +17,7 @@ class Admin::CertificationsController < Admin::AdminController
   end
 
   def index
-    @certifications = Certification.all.page(params[:page]).per Settings.per_page.admin_user
+    @certifications = Certification.all.page(params[:page]).per 4
   end
 
   def edit
