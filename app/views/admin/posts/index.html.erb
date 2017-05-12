@@ -1,0 +1,31 @@
+<div class="col-md-12">
+<div class="col-md-1">
+</div>
+<div class="col-md-10">
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <h3>All blogs</h3>
+    <table class="ui selectable inverted table">
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>content</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= blog.title %></td>
+        <td><%= blog.content %></td>
+        <td><%= image_tag blog.image, class: "img-certificate" %></td>
+          <td><%= link_to t(".delete"), admin_post_path(id: blog.id), method: :delete, data: { confirm: t("confirm_delete") }, class: "ui inverted red button" %></td>
+        	
+      </tr>
+     <% end %>
+    </tbody>
+  </table>
+  <center><%= paginate @blogs, theme: "twitter-bootstrap-3" %></center>
+  </div>
+</div>
+</div>
+</div>

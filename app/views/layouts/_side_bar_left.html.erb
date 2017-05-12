@@ -8,20 +8,15 @@
   <li>
     <%= link_to new_admin_home_path do %><i class="fa fa-pencil"></i> Change Slides <% end %>
   </li>
-  <li>
-    <%= link_to new_admin_project_path(I18n.locale) do %><i class="fa fa-users fa-lg"></i> Create Project <% end %>
-  </li>
   <li data-toggle="collapse" data-target="#products" class="collapsed active">
     <a href="#"><i class="fa fa-gift fa-lg"></i> <%= t "manage.manage" %><span class="arrow"></span></a>
   </li>
   <ul class="sub-menu collapse" id="products">
     <li class="active"><%= link_to t("all") %></li>
+    <li><%= link_to admin_projects_path do %><%= t(".projects") %><% end %></li>
+    <li><%= link_to admin_posts_path do %><%= t(".blogs") %><% end %></li>
     <li><%= link_to admin_categories_path do %><%= t("header.menu.category_techniques") %><% end %></li>
-    <li><%= link_to admin_certifications_path do %><%= t("certification") %><% end %></li>
-    <li><%= link_to t("header.menu.blog") %></li>
-    <li><%= link_to t("header.menu.new") %></li>
-    <li><%= link_to t("slide") %></li>
-    <li><%= link_to "Create Project", new_admin_project_path(I18n.locale) %></li>
+    <li><%= link_to admin_certifications_path do %><%= t(".certification") %><% end %></li>
   </ul>
   <li>
     <%= link_to "" do %><i class="fa fa-user fa-lg"></i> <%= t "profile" %> <% end %>

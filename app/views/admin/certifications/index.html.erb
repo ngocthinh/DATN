@@ -1,8 +1,7 @@
  <div class="list-certification">
    <%= render "list_certification", certifications: @certifications %>
  </div>
-   <%= paginate @certifications %>
-
+ <center><%= paginate @certifications, theme: "twitter-bootstrap-3" %></center>
   <div class="modal fade" role="dialog" id="edit-certification-modal">
   <div class="modal-dialog modal-lg">
     <div class="modal-body">
