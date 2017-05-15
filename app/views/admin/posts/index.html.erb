@@ -16,10 +16,10 @@
     <% @blogs.each do |blog| %>
       <tr>
         <td><%= blog.title %></td>
-        <td><%= blog.content %></td>
+        <td><%= truncate(blog.content, length: 200) %></td>
         <td><%= image_tag blog.image, class: "img-certificate" %></td>
           <td><%= link_to t(".delete"), admin_post_path(id: blog.id), method: :delete, data: { confirm: t("confirm_delete") }, class: "ui inverted red button" %></td>
-        	
+
       </tr>
      <% end %>
     </tbody>

@@ -182,12 +182,10 @@ ActiveRecord::Schema.define(version: 20170427043728) do
     t.string   "core_features"
     t.text     "realease_note",      limit: 65535
     t.string   "git_repository"
-    t.string   "server_information"
     t.string   "platform"
     t.integer  "category_id"
     t.string   "private_attributes"
     t.boolean  "is_suggest"
-    t.string   "pm_url"
     t.integer  "branch"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false

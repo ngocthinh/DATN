@@ -24,15 +24,10 @@ class Project < ApplicationRecord
    length: {maximum: Settings.project.realease_note_length}
   validates :git_repository, presence: true,
    length: {maximum: Settings.project.git_repository_length}
-  validates :server_information, presence: true,
-   length: {maximum: Settings.project.server_information_length}
   validates :platform, presence: true,
    length: {maximum: Settings.project.platform_length}
   validates :core_features, presence: true,
    length: {maximum: Settings.project.core_features_length}
-  validates :pm_url, presence: true,
-   length: {maximum: Settings.project.pm_url_length}
-
   ratyrate_rateable :rating
 
   PRIVATE_ATTRIBUTES = {server_information: "server_information",

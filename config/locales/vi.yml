@@ -13,6 +13,10 @@ vi:
   login_twitter: "Đăng nhập qua Twitter"
   login_facebook: "Đăng nhập qua Facebook"
   sign_up: "Đăng ký"
+  members: "Thành viên"
+  header:
+    projects: "Dự án"
+    blogs: "Bài viết"
   user: "Người dùng"
   user_name: "User name"
   email: "Email "
