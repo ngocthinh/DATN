@@ -264,6 +264,7 @@ ActiveRecord::Schema.define(version: 20170427043728) do
     t.string   "user_name"
     t.string   "position"
     t.text     "biography",              limit: 65535
+    t.string   "address"
     t.string   "private_attribute"
     t.string   "provider"
     t.string   "uid"

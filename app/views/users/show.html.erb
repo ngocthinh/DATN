@@ -66,18 +66,18 @@
                     </tr>
                     <tr>
                       <td>
-                        <strong><%= t "user_name" %>:</strong>
-                      </td>
-                      <td>
-                        <p><%= @user.user_name %></p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
                         <strong><%= t "phone-user" %>:</strong>
                       </td>
                       <td>
                         <p><%= @user.phone %></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong><%= t "address" %>:</strong>
+                      </td>
+                      <td>
+                        <p><%= @user.address %></p>
                       </td>
                     </tr>
                   </tbody>
@@ -86,10 +86,7 @@
             </div>
             <div class="block_info contentdef margin-right-15">
               <div class="info_job col-md-12">
-                <li class="home-col12 col-md-4">
-                  <h4 class="height-15"><%= t "experience" %></h4>
-                  <p></p>
-                </li>
+
                 <li class="home-col12 col-md-4">
                   <h4 class="height-15"><%= t "rank" %></h4>
                   <p>

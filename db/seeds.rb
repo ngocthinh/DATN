@@ -73,7 +73,7 @@ c7 = Certification.create(description: "IBM certifications",
 c7.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/certifications/certification_IBM Corporation.jpg')))
 c7.save
 
-u = User.create(name: "Nguyen Ngoc Thinh", email:"admin@gmail.com", user_name: "Admin",
+u = User.create(name: "Nguyen Ngoc Thinh", email:"admin@gmail.com", address: "Thang Binh, Quang Nam",
   password: "12345678", position: "PM",
   biography: "Rooms oh fully taken by worse do.Points afraid but may end law lasted.
    Was out laughter raptures returned outweigh.", phone: "01212129827")
@@ -88,7 +88,8 @@ end
 30.times do |i|
   name  = "member #{i+1}"
   email = "user#{i+1}@gmail.com"
-  user_name = "Username #{i+1}"
+  address = "54, Nguyễn Lương Bằng
+Q. Liên Chiểu"
   password = "12345678"
   position = "Developer"
   biography = "Rooms oh fully taken by worse do. Points afraid but may end law lasted.
@@ -96,7 +97,7 @@ end
   phone = "01212129827"
 
   u = User.create!(name:  name, email: email, password: password, position: position,
-    biography: biography, user_name: user_name, phone: phone)
+    biography: biography, address: address, phone: phone)
   u.avatar.store!(File.open(File.join(Rails.root, '/public/uploads/default/users/'+"#{i+1}"+'.jpg')))
   u.save
 

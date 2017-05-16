@@ -5,6 +5,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :user_name
       t.string :position
       t.text :biography
+      t.string :address
       t.string :private_attribute
       t.string :provider
       t.string :uid
