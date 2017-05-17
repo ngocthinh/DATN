@@ -105,6 +105,8 @@
               <%= @project.platform %>
             </p>
           </div>
+
+          <% unless @project.private_attributes.split(",").include?("url") %>
           <div class="col-md-12 padding-top-10">
             <p class="text-left">
               <span class="glyphicon glyphicon-cloud gold"></span>
@@ -112,6 +114,8 @@
               <%= link_to @project.url, @project.url %>
             </p>
           </div>
+          <% end %>
+          <% unless @project.private_attributes.split(",").include?("git_repository")%>
           <div class="col-md-12 padding-top-10">
             <p class="text-left">
               <span class="glyphicon glyphicon-star gold"></span>
@@ -119,6 +123,7 @@
               <%= link_to @project.git_repository, @project.git_repository %>
             </p>
           </div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -126,7 +131,7 @@
       <div class="nav-tabs-custom">
         <div class="content show-project">
         <div>
-          <div class="ui teal tag label"><h3><i class="fa fa-users" aria-hidden="true">User of project</i></h3></div>
+          <div class="ui teal tag label"><h3><i class="fa fa-users" aria-hidden="true"><%= t("user_of_projects") %></i></h3></div>
           <div class="tab-pane active" id="member_of_project">
             <div class="row margin-bottom-50">
               <%= render "member_of_project", object: @project.users %>
@@ -135,7 +140,7 @@
         </div>
           <hr>
           <div class="pane" id="comment">
-          <div class="ui blue ribbon label"><i class="fa fa-commenting" aria-hidden="true"></i> comments </div>
+          <div class="ui blue ribbon label"><i class="fa fa-commenting" aria-hidden="true"></i> <%= t("comments") %> </div>
             <div class="row margin-bottom-50">
               </br>
               <% if user_signed_in? %>

@@ -9,6 +9,7 @@ en:
   social_login: "Login with social"
   login_twitter: "Login via Twitter"
   login_facebook: "Login via Facebook"
+  find_user: "Find by name or email"
   sign_up: "Sign Up"
   user: "User"
   user_name: "User name"
@@ -64,9 +65,9 @@ en:
   header:
     menu:
       home: "Home"
-      project: "Project"
-      new: "New"
-      blog: "Blog"
+      projects: "Project"
+      news: "New"
+      blogs: "Blog"
       idea: "Suggest idea"
       contact: "Contact"
       about_team: "About us"

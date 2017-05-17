@@ -30,8 +30,7 @@ class Project < ApplicationRecord
    length: {maximum: Settings.project.core_features_length}
   ratyrate_rateable :rating
 
-  PRIVATE_ATTRIBUTES = {server_information: "server_information",
-    git_repository: "git_repository", pm_url: "pm_url"}
+  PRIVATE_ATTRIBUTES = {git_repository: "git_repository", url: "url"}
 
   BRANCH = [[Settings.branch.hanoi, 0],[Settings.branch.danang, 1]]
   private

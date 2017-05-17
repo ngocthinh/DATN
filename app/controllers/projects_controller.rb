@@ -60,6 +60,7 @@ class ProjectsController < ApplicationController
 
   def update
     @project.update_attributes project_params
+    check_private_attributes
     if @project.save
       flash[:success] = t "succeed"
       redirect_to project_path(I18n.locale, @project)

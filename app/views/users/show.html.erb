@@ -25,7 +25,7 @@
             <%= link_to edit_user_path(I18n.locale, current_user),
               class: "circular ui blue icon button" do %>
               <i class="icon settings"></i>
-              <%= t ".edit_profile" %>
+              <%= t "edit_profile" %>
               <% end %>
               <% end %>
               <br>
@@ -94,12 +94,12 @@
                   </p>
                 </li>
                 <li class="col-md-4 home-col12">
-                  <h4 class="height-15"><%= t "header.menu.blog" %></h4>
-                  <p><%= @user.posts.blog.count %></p>
+                  <h4 class="height-15"><%= t "header.menu.blogs" %></h4>
+                  <p><%= @user.posts.blog.size %></p>
                 </li>
                 <li class="col-md-4 home-col123">
-                  <h4 class="height-15"><%= t "header.menu.project" %></h4>
-                  <p><%= @user.projects.count %></p>
+                  <h4 class="height-15"><%= t "header.menu.projects" %></h4>
+                  <p><%= @user.projects.size %></p>
                 </li>
               </div>
               <div class="desjob-company">

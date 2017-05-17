@@ -4,7 +4,7 @@
       <%= search_form_for @q, url: project_participates_path(I18n.locale, @project),
        id: "search_form", class: " margin-top-null" do |f| %>
         <div class="ui input icon search-form">
-          <%= f.search_field :name_or_email_cont, placeholder: "Find by name or email",
+          <%= f.search_field :name_or_email_cont, placeholder: t("find_user"),
             id: "user_search" %>
         </div>
         <%= f.submit (t "search_button"), class: "ui blue button" %>
@@ -13,7 +13,7 @@
     <% else %>
       <%= search_form_for @q, id: "search_form" do |f| %>
         <div class="ui input icon search-form">
-          <%= f.search_field :name_or_email_cont, placeholder: "Find by name or email",
+          <%= f.search_field :name_or_email_cont, placeholder: t("find_user"),
             id: "user_search" %>
         </div>
         <%= f.submit (t "search_button"), class: "ui blue button" %>
@@ -32,7 +32,7 @@
       <%= search_form_for @q, url: project_participates_path(I18n.locale, @project),
        id: "search_form", class: " margin-top-null" do |f| %>
         <div class="ui input icon search-form">
-          <%= f.search_field :name_or_email_cont, placeholder: "Find by name or email",
+          <%= f.search_field :name_or_email_cont, placeholder: t("find_user"),
             id: "user_search" %>
         </div>
         <%= f.submit (t "search_button"), class: "ui blue button" %>
@@ -40,7 +40,7 @@
       <% else %>
     <%= search_form_for @q, id: "search_form" do |f| %>
       <div class="ui input icon search-form">
-        <%= f.search_field :name_or_email_cont, placeholder: "Find by name or email",
+        <%= f.search_field :name_or_email_cont, placeholder: t("find_user"),
           id: "user_search" %>
       </div>
       <%= f.submit (t "search_button"), class: "ui blue button" %>

@@ -184,11 +184,11 @@ ActiveRecord::Schema.define(version: 20170427043728) do
     t.string   "git_repository"
     t.string   "platform"
     t.integer  "category_id"
-    t.string   "private_attributes"
+    t.string   "private_attributes",               default: ""
     t.boolean  "is_suggest"
     t.integer  "branch"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
     t.index ["category_id"], name: "index_projects_on_category_id", using: :btree
   end
 

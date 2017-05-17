@@ -44,11 +44,19 @@
                 <% Project::PRIVATE_ATTRIBUTES.each do |key, value| %>
                   <div class="col-md-6">
                     <p class="text-left">
+                    <% if @project.private_attributes.present?&&(@project.private_attributes.split(",").include? value) %>
                     <b> <%= key %> : <%= radio_button_tag key, Settings.public %>
                     <%= t "public" %>
                     <%= radio_button_tag key, Settings.private, checked: true %>
                     <%= t "private" %></b><br />
                     <%= f.text_field key, class: "form-control input-md", required: true %></p>
+                    <% else %>
+                     <b> <%= key %> : <%= radio_button_tag key, Settings.public, checked: true  %>
+                    <%= t "public" %>
+                    <%= radio_button_tag key, Settings.private %>
+                    <%= t "private" %></b><br />
+                    <%= f.text_field key, class: "form-control input-md", required: true %></p>
+                    <% end %>
                   </div>
                 <% end %>
                 <div class="col-md-6">
@@ -66,13 +74,7 @@
                     {class: "form-control selectpicker", "data-live-search": true} %>
                   </p>
                 </div>
-                <div class="col-md-6">
-                  <p class="text-left">
-                  <b> <%= t "url" %>: </b><br />
-                    <%= f.text_field :url, class: "form-control input-md",
-                      required: true %>
-                  </p>
-                </div>
+
                 <div class="col-md-6">
                   <p class="text-left">
                   <b> <%= t "realease_note" %>: </b><br />

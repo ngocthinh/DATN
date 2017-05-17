@@ -23,8 +23,8 @@
         <%= user.biography.truncate(Settings.truncate.biography) %>
       </div>
       <div class="disable-cancel center">
-                <%= rating_for user, :rating, disable_after_rate: false, enable_half: true, cancel: false %>
-              </div>
+        <%= rating_for user, :rating, disable_after_rate: false, enable_half: true, cancel: false %>
+      </div>
     <% end %>
   </div>
   <div class="extra content">
