@@ -1,4 +1,5 @@
 en:
+  placeholder: "Search"
   search_button: "Search"
   succeed: "Succeed"
   remove: "Remove"

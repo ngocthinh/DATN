@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <div class="section-title">
           <h2><%= @blog.title %></h2>
-          
+
           <div class="post-meta text-uppercase">
             <span><%= I18n.l @blog.created_at, format: t("format.datetime_create") %></span>
             <%= link_to "Edit", edit_blog_path(I18n.locale, @blog) %>
@@ -14,34 +14,7 @@
             <span><%= t "in" %> <%= link_to @blog.category_name, blogs_path(category: @blog.category.id) %></span>
             <span><%= t "by" %> <%= link_to @blog.user_name, "" %></span>
           </div>
-          <button class="ui facebook button">
-            <i class="facebook icon"></i>
-            <%= t "facebook" %>
-          </button>
-          <button class="ui twitter button">
-            <i class="twitter icon"></i>
-            <%= t "twitter" %>
-          </button>
-          <button class="ui google plus button">
-            <i class="google plus icon"></i>
-            <%= t "google_plus" %>
-          </button>
-          <button class="ui vk button">
-            <i class="vk icon"></i>
-            <%= t "vk" %>
-          </button>
-          <button class="ui linkedin button">
-            <i class="linkedin icon"></i>
-            <%= t "linkedin" %>
-          </button>
-          <button class="ui instagram button">
-            <i class="instagram icon"></i>
-            <%= t "instagram" %>
-          </button>
-          <button class="ui youtube button">
-            <i class="youtube icon"></i>
-            <%= t "youtube" %>
-          </button>
+          <%= social_share_button_tag(@blog.title, url: "https://locahost:3000/#{I18n.locale}/blogs/#{@blog.id}", :'data-type' => 'photo', :popup => "true") %>
           <span class="st-border"></span>
         </div>
       </div>
@@ -68,7 +41,14 @@
         <br/ >
       </div>
       <div class="col-md-4">
-        <%= render "categories/list_category", object: "blog" %>
+      <div class="sidebar-widget">
+        <h4 class="sidebar-title"><%= t "categories" %></h4>
+          <ul>
+            <li>
+            <%= link_to @blog.category.name, blogs_path(I18n.locale, category: @blog.category.id) %>
+         </li>
+          </ul>
+        </div>
       </div>
     </div>
     <h3><%= t "blog_relate" %></h3>
