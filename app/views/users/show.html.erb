@@ -27,6 +27,12 @@
               <i class="icon settings"></i>
               <%= t "edit_profile" %>
               <% end %>
+              <hr>
+              <%= link_to new_project_path(I18n.locale),
+              class: "circular ui info icon button" do %>
+              <i class="icon add"></i>
+              <%= t "add_your_project" %>
+              <% end %>
               <% end %>
               <br>
               <hr>

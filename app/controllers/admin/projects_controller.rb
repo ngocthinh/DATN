@@ -87,8 +87,7 @@ class Admin::ProjectsController < Admin::AdminController
   end
 
   def project_params
-    params.require(:project).permit :name, :url, :description, :core_features, :pm_url,
-      :realease_note, :git_repository, :platform, :category_id,
+    params.require(:project).permit :name, :url, :description, :core_features, :pm_url, :git_repository, :category_id,
       :pm_url, images_attributes: [:id, :image, :image_cache, :_destroy]
   end
 end
