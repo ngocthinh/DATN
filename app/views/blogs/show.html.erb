@@ -52,6 +52,6 @@
       </div>
     </div>
     <h3><%= t "blog_relate" %></h3>
-    <%= render "related/related_post", object: "blog" %>
+    <%= render "related_post", posts_relate: @blog.user.posts, object: "blog" %>
   </div>
 </section>

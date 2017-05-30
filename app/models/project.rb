@@ -16,12 +16,8 @@ class Project < ApplicationRecord
 
   validates :name, presence: true,
    length: {maximum: Settings.project.name_length}
-  validates :url, presence: true,
-   length: {maximum: Settings.project.url_length}
   validates :description, presence: true,
    length: {maximum: Settings.project.description_length}
-  validates :git_repository, presence: true,
-   length: {maximum: Settings.project.git_repository_length}
   validates :core_features, presence: true,
    length: {maximum: Settings.project.core_features_length}
   ratyrate_rateable :rating

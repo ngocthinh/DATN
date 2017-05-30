@@ -42,21 +42,20 @@
                     <%= t "public" %>
                     <%= radio_button_tag key, Settings.private, checked: true %>
                     <%= t "private" %></b><br />
-                    <%= f.text_field key, class: "form-control input-md", required: true %></p>
+                    <%= f.text_field key, class: "form-control input-md" %></p>
                     <% else %>
                      <b> <%= key %> : <%= radio_button_tag key, Settings.public, checked: true  %>
                     <%= t "public" %>
                     <%= radio_button_tag key, Settings.private %>
                     <%= t "private" %></b><br />
-                    <%= f.text_field key, class: "form-control input-md", required: true %></p>
+                    <%= f.text_field key, class: "form-control input-md" %></p>
                     <% end %>
                   </div>
                 <% end %>
                 <div class="col-md-6">
                   <p class="text-left">
                   <b> <%= t "core_features" %>: </b><br />
-                    <%= f.text_field :core_features, class: "form-control input-md",
-                      required: true %>
+                    <%= f.text_field :core_features, class: "form-control input-md" %>
                   </p>
                 </div>
                 <div class="col-md-6">

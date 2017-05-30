@@ -1,1 +1,10 @@
-<%= render "shared/user_form" %>
+<div class="row">
+    <div class="section-title">
+      <center><h2><%= t "header.menu.create_account" %></h2></center>
+      <span class="st-border"></span>
+    </div>
+      <% provide :text_submit, t(".save") %>
+      <%= render "shared/user_form" %>
+    </br>
+
+</div>

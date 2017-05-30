@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new user_params
+    @user = User.new user_params_create
     if @user.save
       flash[:success] = t "profile.created"
       redirect_to root_url
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
   def update
     @user.document = params[:user][:document] unless params[:user][:document].nil?
-    @user.update_attributes user_params
+    @user.update_attributes user_params_update
     @technique_params = Supports::UserTechniques
       .new current_user, params
     if @user.save
@@ -70,8 +70,12 @@ class UsersController < ApplicationController
     redirect_to root_url unless @user == current_user
   end
 
-  def user_params
+  def user_params_create
     params.require(:user).permit :name, :address, :email, :password,
+      :password_confirmation, :avatar, :biography, :position, :phone
+  end
+  def user_params_update
+    params.require(:user).permit :name, :address, :password,
       :password_confirmation, :avatar, :biography, :position, :phone
   end
 

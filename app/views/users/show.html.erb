@@ -25,7 +25,7 @@
             <%= link_to edit_user_path(I18n.locale, current_user),
               class: "circular ui blue icon button" do %>
               <i class="icon settings"></i>
-              <%= t "edit_profile" %>
+                <%= t "edit_profile" %>
               <% end %>
               <hr>
               <%= link_to new_project_path(I18n.locale),
@@ -55,7 +55,7 @@
                 <table class="ui very basic collapsing celled table width-100">
                   <tbody>
                     <tr>
-                      <td>
+                      <td><i class="icon user"></i>
                         <strong><%= t "name" %>:</strong>
                       </td>
                       <td>
@@ -63,7 +63,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>
+                      <td><i class="icon mail"></i>
                         <strong><%= t "email" %>:</strong>
                       </td>
                       <td>
@@ -71,7 +71,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>
+                      <td><i class="icon phone"></i>
                         <strong><%= t "phone-user" %>:</strong>
                       </td>
                       <td>
@@ -79,7 +79,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>
+                      <td><i class="icon home"></i>
                         <strong><%= t "address" %>:</strong>
                       </td>
                       <td>

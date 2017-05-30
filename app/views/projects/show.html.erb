@@ -102,7 +102,7 @@
             <p class="text-left">
               <span class="glyphicon glyphicon-list-alt gold"></span>
               <b> <%= t "platform" %>: </b><br />
-              <%= @project.platform %>
+              <%= @project.category.name %>
             </p>
           </div>
 
@@ -118,7 +118,7 @@
           <% unless @project.private_attributes.split(",").include?("git_repository")%>
           <div class="col-md-12 padding-top-10">
             <p class="text-left">
-              <span class="glyphicon glyphicon-star gold"></span>
+              <i class="icon github sign gold"></i>
               <b> <%= t "git_repository" %>: </b><br />
               <%= link_to @project.git_repository, @project.git_repository %>
             </p>

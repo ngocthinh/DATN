@@ -7,11 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 core_features = [" Clear","User friendly", "Simple and Professional Design.","high Speed","Compatibility mode", "Search Engine Optimisation"]
 #che do tuong thich, toi uu hoa cong cu tim kiem
-h = Home.create title: "Portfolio", sologan: "What should be included in my portfolio?", description: "You can have projects to work on and include in your portfolio and you can also have clients to start wit", language: :en
+h = Home.create title: "Portfolio", sologan: "What should be included in my portfolio?", description: "You can have projects to work on and include in your portfolio and you can also have clients to start wit", language: :vi
 i = Image.create target_id: 1, target_type: "Home"
 i.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/sliders/slider.jpg')))
 i.save
 h.save
+
+h1 = Home.create title: "Portfolio", sologan: "What should be included in my portfolio?", description: "You can have projects to work on and include in your portfolio and you can also have clients to start wit", language: :en
+i1 = Image.create target_id: 1, target_type: "Home"
+i1.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/sliders/slider.jpg')))
+i1.save
+h1.save
 
 Category.create(name: "Website", target_type: 2)
 Category.create(name: "Mobile", target_type: 2)
@@ -73,12 +79,22 @@ c7 = Certification.create(description: "IBM certifications",
 c7.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/certifications/certification_IBM Corporation.jpg')))
 c7.save
 
-u = User.create(name: "Nguyen Ngoc Thinh", email:"admin@gmail.com", address: "Thang Binh, Quang Nam",
-  password: "12345678", position: "PM",
-  biography: "Rooms oh fully taken by worse do.Points afraid but may end law lasted.
-   Was out laughter raptures returned outweigh.", phone: "01212129827")
+u1 = User.create(name: "Admin", email:"admin@gmail.com", address: "Thang Binh, Quang Nam",
+  password: "12345678", position: "Admin",
+  biography: "Admin.", phone: "01212129827")
 
-u.add_role :admin
+u1.add_role :admin
+
+u2 = User.create(name: "Nguyen Ngoc Thinh", email:"nguyenngocthinh@gmail.com", address: "Thang Binh, Quang Nam",
+  password: "12345678", position: "DEV",
+  biography: "Nguyễn Ngoc Thinh tốt nghiệp THPT nam 2012, Theo hoc BKDN den nay..", phone: "01202482426")
+
+u = User.create(name: "Nguyen Ha Dong", email:"nguyenhadong@gmail.com", address: "Thang Binh, Quang Nam",
+  password: "12345678", position: "PM",
+  biography: "Nguyễn Hà Đông tốt nghiệp kỹ sư Công nghệ thông tin chuyên ngành Hệ thống thông tin của Trường Đại học Bách khoa Hà Nội. Năm 2012, anh thành lập.GEARS Studios và bắt đầu xuất bản các trò chơi dạng arcade trên điện thoại thông minh, phần lớn được thiết kế riêng cho iPhone.", phone: "01212129827")
+
+u.avatar.store!(File.open(File.join(Rails.root, '/public/uploads/default/users/nhd.jpg')))
+u.save
 
 5.times do |e|
   TargetTechnique.create!(target_id: e+1, target_type: "User", technique_id: "#{e+1}")
@@ -92,8 +108,7 @@ end
 Q. Liên Chiểu"
   password = "12345678"
   position = "Developer"
-  biography = "Rooms oh fully taken by worse do. Points afraid but may end law lasted.
-  Was out laughter raptures returned outweigh."
+  biography = "Nguyễn Hà Đông tốt nghiệp kỹ sư Công nghệ thông tin chuyên ngành Hệ thống thông tin của Trường Đại học Bách khoa Hà Nội. Năm 2012, anh thành lập.GEARS Studios và bắt đầu xuất bản các trò chơi dạng arcade trên điện thoại thông minh, phần lớn được thiết kế riêng cho iPhone."
   phone = "01212129827"
 
   u = User.create!(name:  name, email: email, password: password, position: position,
@@ -291,7 +306,7 @@ Và bạn biết gì không, Elon Musk đã chính thức đặt chân vào cu�
 Công nghệ thần kinh lần đầu tiên được đưa ra bởi Jaques Vidal vào hồi những năm 1970, ông nêu lên ý tưởng về việc ghi điện não – việc theo dõi và ghi lại song não thông qua những cảm biến được đặt trên da đầu của con người – có thể được sử dụng để tạo nên những hệ thống cho phép con người điều khiển những vật thể, những thiết bị khác.", target_type: 0)
 p = Post.last
 p.category_id = 7
-p.user_id = 1
+p.user_id = 3
 p.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/posts/ElonMusk.jpg')))
 p.save
 
@@ -303,7 +318,7 @@ Nếu bạn muốn tốt hơn trong xử lí sự cố và phân tích hiệu n�
 Trong bài viết này, chúng tôi sẽ tìm hiểu java.lang.OutOfMemoryError là gì ? Tại sao OutOfMemoryError lại xảy ra với ứng dụng Java? sự khác nhau giữa OutOfMemoryError và Làm thế nào để khắc phục OutOfMemoryError  trong Java. Bài viết còn cung cấp kiến thức cơ bản về  java.lang.OutOfMemoryError và chúng tôi sẽ không bàn luận chi tiết về profiling. Về profiling hãy đọc những cuốn sách đã được tối nhắc ở trên.", target_type: 0)
 p = Post.last
 p.category_id = 7
-p.user_id = 1
+p.user_id = 3
 p.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/posts/understanding-jvm.jpg')))
 p.save
 
@@ -327,10 +342,14 @@ Archive
 Các bảng nhỏ gọn, không biểu hiện này được dùng để lưu trữ và truy xuất số lượng lớn các thông tin kiểm tra lịch sử, lưu trữ, hoặc kiểm tra an toàn.", target_type: 0)
 p = Post.last
 p.category_id = 8
-p.user_id = 1
+p.user_id = 3
 p.image.store!(File.open(File.join(Rails.root, '/public/uploads/default/posts/mysql.png')))
 p.save
 
 3.times do |e|
-  Participate.create!(user_id: 1, project_id: "#{25-e}", is_accept: true, position: "div")
+  Participate.create!(user_id: 3, project_id: "#{25-e}", is_accept: true, position: "div")
+end
+
+25.times do |e|
+  Participate.create!(user_id: "#{32-e}", project_id: "#{25-e}", is_accept: true, position: "div")
 end
